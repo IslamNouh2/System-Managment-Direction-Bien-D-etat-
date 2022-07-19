@@ -54,11 +54,19 @@ Partial Class Form_arrete_cess
         Me.Dat_rapp_ren_immobDateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.directeurbtn = New System.Windows.Forms.Button()
         Me.Cd_direc_ComboBox = New System.Windows.Forms.ComboBox()
+        Me.NomCDirecteurBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Droit_propriter_etatDataSet1 = New WindowsApplication1.droit_propriter_etatDataSet()
+        Me.DirecteurBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Beneficiaire_cd_beneComboBox = New System.Windows.Forms.ComboBox()
+        Me.Nom_completBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Droit_proDataSet = New WindowsApplication1.droit_proDataSet()
         Me.BeneficiaireBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BeneficiaireTableAdapter = New WindowsApplication1.droit_propriter_etatDataSetTableAdapters.BeneficiaireTableAdapter()
-        Me.DirecteurBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DirecteurTableAdapter = New WindowsApplication1.droit_propriter_etatDataSetTableAdapters.DirecteurTableAdapter()
+        Me.Nom_completTableAdapter = New WindowsApplication1.droit_proDataSetTableAdapters.Nom_completTableAdapter()
+        Me.TableAdapterManager1 = New WindowsApplication1.droit_proDataSetTableAdapters.TableAdapterManager()
+        Me.NomC_DirecteurBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.NomC_direcTableAdapter = New WindowsApplication1.droit_propriter_etatDataSetTableAdapters.NomC_direcTableAdapter()
         N_rapp_ren_immbLabel = New System.Windows.Forms.Label()
         Dat_rapp_ren_immobLabel = New System.Windows.Forms.Label()
         Cd_direc_Label = New System.Windows.Forms.Label()
@@ -68,8 +76,13 @@ Partial Class Form_arrete_cess
         CType(Me.Arrete_cession_bien_etatBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Arrete_cession_bien_etatBindingNavigator.SuspendLayout()
         CType(Me.Arrete_cession_bien_etatDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BeneficiaireBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NomCDirecteurBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Droit_propriter_etatDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DirecteurBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Nom_completBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Droit_proDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BeneficiaireBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NomC_DirecteurBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'N_rapp_ren_immbLabel
@@ -148,6 +161,8 @@ Partial Class Form_arrete_cess
         Me.TableAdapterManager.Echencer_VersementTableAdapter = Nothing
         Me.TableAdapterManager.GestionnaireTableAdapter = Nothing
         Me.TableAdapterManager.LocalTableAdapter = Nothing
+        Me.TableAdapterManager.NomC_direcTableAdapter = Nothing
+        Me.TableAdapterManager.NomCBeneficiaireTableAdapter = Nothing
         Me.TableAdapterManager.PV_Commession_CessionTableAdapter = Nothing
         Me.TableAdapterManager.QuartierTableAdapter = Nothing
         Me.TableAdapterManager.Rapport_evaluationTableAdapter = Nothing
@@ -347,8 +362,8 @@ Partial Class Form_arrete_cess
         'Cd_direc_ComboBox
         '
         Me.Cd_direc_ComboBox.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.Arrete_cession_bien_etatBindingSource, "Cd_direc_", True))
-        Me.Cd_direc_ComboBox.DataSource = Me.DirecteurBindingSource
-        Me.Cd_direc_ComboBox.DisplayMember = "Nom_direc"
+        Me.Cd_direc_ComboBox.DataSource = Me.NomCDirecteurBindingSource
+        Me.Cd_direc_ComboBox.DisplayMember = "NomC_direc"
         Me.Cd_direc_ComboBox.Font = New System.Drawing.Font("Nina", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cd_direc_ComboBox.FormattingEnabled = True
         Me.Cd_direc_ComboBox.Location = New System.Drawing.Point(578, 52)
@@ -357,11 +372,26 @@ Partial Class Form_arrete_cess
         Me.Cd_direc_ComboBox.TabIndex = 12
         Me.Cd_direc_ComboBox.ValueMember = "Cd_direc_"
         '
+        'NomCDirecteurBindingSource
+        '
+        Me.NomCDirecteurBindingSource.DataMember = "NomC_Directeur"
+        Me.NomCDirecteurBindingSource.DataSource = Me.Droit_propriter_etatDataSet1
+        '
+        'Droit_propriter_etatDataSet1
+        '
+        Me.Droit_propriter_etatDataSet1.DataSetName = "droit_propriter_etatDataSet"
+        Me.Droit_propriter_etatDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'DirecteurBindingSource
+        '
+        Me.DirecteurBindingSource.DataMember = "Directeur"
+        Me.DirecteurBindingSource.DataSource = Me.Droit_propriter_etatDataSet
+        '
         'Beneficiaire_cd_beneComboBox
         '
         Me.Beneficiaire_cd_beneComboBox.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.Arrete_cession_bien_etatBindingSource, "beneficiaire_cd_bene", True))
-        Me.Beneficiaire_cd_beneComboBox.DataSource = Me.BeneficiaireBindingSource
-        Me.Beneficiaire_cd_beneComboBox.DisplayMember = "Cd_bene"
+        Me.Beneficiaire_cd_beneComboBox.DataSource = Me.Nom_completBindingSource
+        Me.Beneficiaire_cd_beneComboBox.DisplayMember = "NomComplet"
         Me.Beneficiaire_cd_beneComboBox.Font = New System.Drawing.Font("Nina", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Beneficiaire_cd_beneComboBox.FormattingEnabled = True
         Me.Beneficiaire_cd_beneComboBox.Location = New System.Drawing.Point(578, 108)
@@ -369,6 +399,16 @@ Partial Class Form_arrete_cess
         Me.Beneficiaire_cd_beneComboBox.Size = New System.Drawing.Size(200, 27)
         Me.Beneficiaire_cd_beneComboBox.TabIndex = 14
         Me.Beneficiaire_cd_beneComboBox.ValueMember = "Cd_bene"
+        '
+        'Nom_completBindingSource
+        '
+        Me.Nom_completBindingSource.DataMember = "Nom_complet"
+        Me.Nom_completBindingSource.DataSource = Me.Droit_proDataSet
+        '
+        'Droit_proDataSet
+        '
+        Me.Droit_proDataSet.DataSetName = "droit_proDataSet"
+        Me.Droit_proDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'BeneficiaireBindingSource
         '
@@ -379,14 +419,35 @@ Partial Class Form_arrete_cess
         '
         Me.BeneficiaireTableAdapter.ClearBeforeFill = True
         '
-        'DirecteurBindingSource
-        '
-        Me.DirecteurBindingSource.DataMember = "Directeur"
-        Me.DirecteurBindingSource.DataSource = Me.Droit_propriter_etatDataSet
-        '
         'DirecteurTableAdapter
         '
         Me.DirecteurTableAdapter.ClearBeforeFill = True
+        '
+        'Nom_completTableAdapter
+        '
+        Me.Nom_completTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager1
+        '
+        Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager1.Beneficiaire_DTableAdapter = Nothing
+        Me.TableAdapterManager1.Commune_DTableAdapter = Nothing
+        Me.TableAdapterManager1.Droits_de_propriete_de_etatTableAdapter = Nothing
+        Me.TableAdapterManager1.Local_DTableAdapter = Nothing
+        Me.TableAdapterManager1.Nom_completTableAdapter = Me.Nom_completTableAdapter
+        Me.TableAdapterManager1.Quartier_DTableAdapter = Nothing
+        Me.TableAdapterManager1.Residence_DTableAdapter = Nothing
+        Me.TableAdapterManager1.UpdateOrder = WindowsApplication1.droit_proDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager1.Wilaya_DTableAdapter = Nothing
+        '
+        'NomC_DirecteurBindingSource
+        '
+        Me.NomC_DirecteurBindingSource.DataSource = Me.Droit_propriter_etatDataSet
+        Me.NomC_DirecteurBindingSource.Position = 0
+        '
+        'NomC_direcTableAdapter
+        '
+        Me.NomC_direcTableAdapter.ClearBeforeFill = True
         '
         'Form_arrete_cess
         '
@@ -406,15 +467,20 @@ Partial Class Form_arrete_cess
         Me.Controls.Add(Me.Arrete_cession_bien_etatDataGridView)
         Me.Controls.Add(Me.Arrete_cession_bien_etatBindingNavigator)
         Me.Name = "Form_arrete_cess"
-        Me.Text = "Form_arrete_cess"
+        Me.Text = " مقرر التنازل عن الأملاك العقارية"
         CType(Me.Droit_propriter_etatDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Arrete_cession_bien_etatBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Arrete_cession_bien_etatBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Arrete_cession_bien_etatBindingNavigator.ResumeLayout(False)
         Me.Arrete_cession_bien_etatBindingNavigator.PerformLayout()
         CType(Me.Arrete_cession_bien_etatDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BeneficiaireBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NomCDirecteurBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Droit_propriter_etatDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DirecteurBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Nom_completBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Droit_proDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BeneficiaireBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NomC_DirecteurBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -451,4 +517,12 @@ Partial Class Form_arrete_cess
     Friend WithEvents BeneficiaireTableAdapter As droit_propriter_etatDataSetTableAdapters.BeneficiaireTableAdapter
     Friend WithEvents DirecteurBindingSource As BindingSource
     Friend WithEvents DirecteurTableAdapter As droit_propriter_etatDataSetTableAdapters.DirecteurTableAdapter
+    Friend WithEvents Droit_proDataSet As droit_proDataSet
+    Friend WithEvents Nom_completBindingSource As BindingSource
+    Friend WithEvents Nom_completTableAdapter As droit_proDataSetTableAdapters.Nom_completTableAdapter
+    Friend WithEvents TableAdapterManager1 As droit_proDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents NomC_DirecteurBindingSource As BindingSource
+    Friend WithEvents NomC_direcTableAdapter As droit_propriter_etatDataSetTableAdapters.NomC_direcTableAdapter
+    Friend WithEvents Droit_propriter_etatDataSet1 As droit_propriter_etatDataSet
+    Friend WithEvents NomCDirecteurBindingSource As BindingSource
 End Class

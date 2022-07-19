@@ -32,7 +32,7 @@
     End Sub
 
     Private Sub echn_droit_probtn_Click(sender As Object, e As EventArgs) Handles echn_droit_probtn.Click
-        Form_droit_pro_etat.Show()
+        FormDroi_pro.Show()
     End Sub
 
     Private Sub commi_cessbtn_Click(sender As Object, e As EventArgs) Handles commi_cessbtn.Click
@@ -42,4 +42,8 @@
     Private Sub arrete_cessbtn_Click(sender As Object, e As EventArgs) Handles arrete_cessbtn.Click
         Form_arrete_cess.Show()
     End Sub
+
+
+
+
 End Class

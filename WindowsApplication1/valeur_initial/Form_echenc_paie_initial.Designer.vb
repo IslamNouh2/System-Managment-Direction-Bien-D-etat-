@@ -25,7 +25,6 @@ Partial Class Form_echenc_paie_initial
         Me.components = New System.ComponentModel.Container()
         Dim N_tab_val_ava_initLabel As System.Windows.Forms.Label
         Dim Dat_tab_val_ava_initLabel As System.Windows.Forms.Label
-        Dim Val_ava_initLabel As System.Windows.Forms.Label
         Dim Beneficiaire_cd_beneLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_echenc_paie_initial))
         Me.Droit_propriter_etatDataSet = New WindowsApplication1.droit_propriter_etatDataSet()
@@ -48,23 +47,26 @@ Partial Class Form_echenc_paie_initial
         Me.Calendrier_valueur_initaleDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.N_tab_val_ava_initTextBox = New System.Windows.Forms.TextBox()
         Me.Dat_tab_val_ava_initDateTimePicker = New System.Windows.Forms.DateTimePicker()
-        Me.Val_ava_initTextBox = New System.Windows.Forms.TextBox()
         Me.Beneficiaire_cd_beneComboBox = New System.Windows.Forms.ComboBox()
+        Me.NomCDataTableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Valeur_inDataSet = New WindowsApplication1.Valeur_inDataSet()
         Me.BeneficiaireBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BeneficiaireTableAdapter = New WindowsApplication1.droit_propriter_etatDataSetTableAdapters.BeneficiaireTableAdapter()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.NomCDataTableTableAdapter = New WindowsApplication1.Valeur_inDataSetTableAdapters.NomCDataTableTableAdapter()
         N_tab_val_ava_initLabel = New System.Windows.Forms.Label()
         Dat_tab_val_ava_initLabel = New System.Windows.Forms.Label()
-        Val_ava_initLabel = New System.Windows.Forms.Label()
         Beneficiaire_cd_beneLabel = New System.Windows.Forms.Label()
         CType(Me.Droit_propriter_etatDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Calendrier_valueur_initaleBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Calendrier_valueur_initaleBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Calendrier_valueur_initaleBindingNavigator.SuspendLayout()
         CType(Me.Calendrier_valueur_initaleDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NomCDataTableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Valeur_inDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BeneficiaireBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -90,23 +92,12 @@ Partial Class Form_echenc_paie_initial
         Dat_tab_val_ava_initLabel.TabIndex = 4
         Dat_tab_val_ava_initLabel.Text = "رقم جدول الدفع الخاص بقيمة التسبيق"
         '
-        'Val_ava_initLabel
-        '
-        Val_ava_initLabel.AutoSize = True
-        Val_ava_initLabel.Font = New System.Drawing.Font("Nina", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Val_ava_initLabel.ForeColor = System.Drawing.Color.White
-        Val_ava_initLabel.Location = New System.Drawing.Point(406, 170)
-        Val_ava_initLabel.Name = "Val_ava_initLabel"
-        Val_ava_initLabel.Size = New System.Drawing.Size(109, 19)
-        Val_ava_initLabel.TabIndex = 6
-        Val_ava_initLabel.Text = "قيمة التسبيق المبدئي"
-        '
         'Beneficiaire_cd_beneLabel
         '
         Beneficiaire_cd_beneLabel.AutoSize = True
         Beneficiaire_cd_beneLabel.Font = New System.Drawing.Font("Nina", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Beneficiaire_cd_beneLabel.ForeColor = System.Drawing.Color.White
-        Beneficiaire_cd_beneLabel.Location = New System.Drawing.Point(907, 170)
+        Beneficiaire_cd_beneLabel.Location = New System.Drawing.Point(573, 162)
         Beneficiaire_cd_beneLabel.Name = "Beneficiaire_cd_beneLabel"
         Beneficiaire_cd_beneLabel.Size = New System.Drawing.Size(72, 19)
         Beneficiaire_cd_beneLabel.TabIndex = 8
@@ -144,6 +135,8 @@ Partial Class Form_echenc_paie_initial
         Me.TableAdapterManager.Echencer_VersementTableAdapter = Nothing
         Me.TableAdapterManager.GestionnaireTableAdapter = Nothing
         Me.TableAdapterManager.LocalTableAdapter = Nothing
+        Me.TableAdapterManager.NomC_direcTableAdapter = Nothing
+        Me.TableAdapterManager.NomCBeneficiaireTableAdapter = Nothing
         Me.TableAdapterManager.PV_Commession_CessionTableAdapter = Nothing
         Me.TableAdapterManager.QuartierTableAdapter = Nothing
         Me.TableAdapterManager.Rapport_evaluationTableAdapter = Nothing
@@ -269,7 +262,7 @@ Partial Class Form_echenc_paie_initial
         Me.Calendrier_valueur_initaleDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.Calendrier_valueur_initaleDataGridView.BackgroundColor = System.Drawing.Color.DarkSlateGray
         Me.Calendrier_valueur_initaleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Calendrier_valueur_initaleDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4})
+        Me.Calendrier_valueur_initaleDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn4})
         Me.Calendrier_valueur_initaleDataGridView.DataSource = Me.Calendrier_valueur_initaleBindingSource
         Me.Calendrier_valueur_initaleDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Calendrier_valueur_initaleDataGridView.Location = New System.Drawing.Point(0, 293)
@@ -292,13 +285,6 @@ Partial Class Form_echenc_paie_initial
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.ReadOnly = True
         '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "Val_ava_init"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Val_ava_init"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        '
         'DataGridViewTextBoxColumn4
         '
         Me.DataGridViewTextBoxColumn4.DataPropertyName = "beneficiaire_cd_bene"
@@ -317,34 +303,37 @@ Partial Class Form_echenc_paie_initial
         '
         'Dat_tab_val_ava_initDateTimePicker
         '
+        Me.Dat_tab_val_ava_initDateTimePicker.CustomFormat = "dd/mm/yyyy"
         Me.Dat_tab_val_ava_initDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.Calendrier_valueur_initaleBindingSource, "Dat_tab_val_ava_init", True))
         Me.Dat_tab_val_ava_initDateTimePicker.Font = New System.Drawing.Font("Nina", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Dat_tab_val_ava_initDateTimePicker.Location = New System.Drawing.Point(561, 78)
         Me.Dat_tab_val_ava_initDateTimePicker.Name = "Dat_tab_val_ava_initDateTimePicker"
         Me.Dat_tab_val_ava_initDateTimePicker.Size = New System.Drawing.Size(200, 27)
         Me.Dat_tab_val_ava_initDateTimePicker.TabIndex = 5
-        '
-        'Val_ava_initTextBox
-        '
-        Me.Val_ava_initTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Calendrier_valueur_initaleBindingSource, "Val_ava_init", True))
-        Me.Val_ava_initTextBox.Font = New System.Drawing.Font("Nina", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Val_ava_initTextBox.Location = New System.Drawing.Point(102, 167)
-        Me.Val_ava_initTextBox.Name = "Val_ava_initTextBox"
-        Me.Val_ava_initTextBox.Size = New System.Drawing.Size(200, 27)
-        Me.Val_ava_initTextBox.TabIndex = 7
+        Me.Dat_tab_val_ava_initDateTimePicker.Value = New Date(2022, 6, 6, 0, 0, 0, 0)
         '
         'Beneficiaire_cd_beneComboBox
         '
         Me.Beneficiaire_cd_beneComboBox.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.Calendrier_valueur_initaleBindingSource, "beneficiaire_cd_bene", True))
-        Me.Beneficiaire_cd_beneComboBox.DataSource = Me.BeneficiaireBindingSource
-        Me.Beneficiaire_cd_beneComboBox.DisplayMember = "Cd_bene"
+        Me.Beneficiaire_cd_beneComboBox.DataSource = Me.NomCDataTableBindingSource
+        Me.Beneficiaire_cd_beneComboBox.DisplayMember = "NomC"
         Me.Beneficiaire_cd_beneComboBox.Font = New System.Drawing.Font("Nina", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Beneficiaire_cd_beneComboBox.FormattingEnabled = True
-        Me.Beneficiaire_cd_beneComboBox.Location = New System.Drawing.Point(561, 167)
+        Me.Beneficiaire_cd_beneComboBox.Location = New System.Drawing.Point(328, 159)
         Me.Beneficiaire_cd_beneComboBox.Name = "Beneficiaire_cd_beneComboBox"
         Me.Beneficiaire_cd_beneComboBox.Size = New System.Drawing.Size(200, 27)
         Me.Beneficiaire_cd_beneComboBox.TabIndex = 11
         Me.Beneficiaire_cd_beneComboBox.ValueMember = "Cd_bene"
+        '
+        'NomCDataTableBindingSource
+        '
+        Me.NomCDataTableBindingSource.DataMember = "NomCDataTable"
+        Me.NomCDataTableBindingSource.DataSource = Me.Valeur_inDataSet
+        '
+        'Valeur_inDataSet
+        '
+        Me.Valeur_inDataSet.DataSetName = "Valeur_inDataSet"
+        Me.Valeur_inDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'BeneficiaireBindingSource
         '
@@ -355,30 +344,52 @@ Partial Class Form_echenc_paie_initial
         '
         Me.BeneficiaireTableAdapter.ClearBeforeFill = True
         '
+        'Button1
+        '
+        Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(119, Byte), Integer))
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Modern No. 20", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(424, 249)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(163, 38)
+        Me.Button1.TabIndex = 24
+        Me.Button1.Text = "إستخـراج أمــر بالدفــع"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'NomCDataTableTableAdapter
+        '
+        Me.NomCDataTableTableAdapter.ClearBeforeFill = True
+        '
         'Form_echenc_paie_initial
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(83, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1046, 513)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Beneficiaire_cd_beneComboBox)
         Me.Controls.Add(N_tab_val_ava_initLabel)
         Me.Controls.Add(Me.N_tab_val_ava_initTextBox)
         Me.Controls.Add(Dat_tab_val_ava_initLabel)
         Me.Controls.Add(Me.Dat_tab_val_ava_initDateTimePicker)
-        Me.Controls.Add(Val_ava_initLabel)
-        Me.Controls.Add(Me.Val_ava_initTextBox)
         Me.Controls.Add(Beneficiaire_cd_beneLabel)
         Me.Controls.Add(Me.Calendrier_valueur_initaleDataGridView)
         Me.Controls.Add(Me.Calendrier_valueur_initaleBindingNavigator)
         Me.Name = "Form_echenc_paie_initial"
-        Me.Text = "Form1"
+        Me.Text = "قيمة التسبيق المبدئي"
         CType(Me.Droit_propriter_etatDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Calendrier_valueur_initaleBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Calendrier_valueur_initaleBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Calendrier_valueur_initaleBindingNavigator.ResumeLayout(False)
         Me.Calendrier_valueur_initaleBindingNavigator.PerformLayout()
         CType(Me.Calendrier_valueur_initaleDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NomCDataTableBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Valeur_inDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BeneficiaireBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -403,14 +414,16 @@ Partial Class Form_echenc_paie_initial
     Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
     Friend WithEvents Calendrier_valueur_initaleBindingNavigatorSaveItem As ToolStripButton
     Friend WithEvents Calendrier_valueur_initaleDataGridView As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
     Friend WithEvents N_tab_val_ava_initTextBox As TextBox
     Friend WithEvents Dat_tab_val_ava_initDateTimePicker As DateTimePicker
-    Friend WithEvents Val_ava_initTextBox As TextBox
     Friend WithEvents Beneficiaire_cd_beneComboBox As ComboBox
     Friend WithEvents BeneficiaireBindingSource As BindingSource
     Friend WithEvents BeneficiaireTableAdapter As droit_propriter_etatDataSetTableAdapters.BeneficiaireTableAdapter
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Valeur_inDataSet As Valeur_inDataSet
+    Friend WithEvents NomCDataTableBindingSource As BindingSource
+    Friend WithEvents NomCDataTableTableAdapter As Valeur_inDataSetTableAdapters.NomCDataTableTableAdapter
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
 End Class

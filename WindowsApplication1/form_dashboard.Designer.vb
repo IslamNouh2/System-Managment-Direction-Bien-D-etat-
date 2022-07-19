@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class form_dashboard
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class form_dashboard
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -58,9 +58,9 @@ Partial Class form_dashboard
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(433, 18)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(143, 33)
+        Me.Label1.Size = New System.Drawing.Size(167, 33)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Dashboard"
+        Me.Label1.Text = "الواجهة الرئسية"
         '
         'Panel2
         '
@@ -85,6 +85,7 @@ Partial Class form_dashboard
         'arrete_cessbtn
         '
         Me.arrete_cessbtn.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.arrete_cessbtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.arrete_cessbtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(119, Byte), Integer))
         Me.arrete_cessbtn.FlatAppearance.BorderSize = 0
         Me.arrete_cessbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(103, Byte), Integer))
@@ -92,7 +93,7 @@ Partial Class form_dashboard
         Me.arrete_cessbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.arrete_cessbtn.Font = New System.Drawing.Font("Modern No. 20", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.arrete_cessbtn.ForeColor = System.Drawing.Color.White
-        Me.arrete_cessbtn.Location = New System.Drawing.Point(624, 252)
+        Me.arrete_cessbtn.Location = New System.Drawing.Point(617, 254)
         Me.arrete_cessbtn.Name = "arrete_cessbtn"
         Me.arrete_cessbtn.Size = New System.Drawing.Size(200, 62)
         Me.arrete_cessbtn.TabIndex = 10
@@ -102,6 +103,7 @@ Partial Class form_dashboard
         'commi_cessbtn
         '
         Me.commi_cessbtn.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.commi_cessbtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.commi_cessbtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(119, Byte), Integer))
         Me.commi_cessbtn.FlatAppearance.BorderSize = 0
         Me.commi_cessbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(103, Byte), Integer))
@@ -109,7 +111,7 @@ Partial Class form_dashboard
         Me.commi_cessbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.commi_cessbtn.Font = New System.Drawing.Font("Modern No. 20", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.commi_cessbtn.ForeColor = System.Drawing.Color.White
-        Me.commi_cessbtn.Location = New System.Drawing.Point(370, 252)
+        Me.commi_cessbtn.Location = New System.Drawing.Point(388, 254)
         Me.commi_cessbtn.Name = "commi_cessbtn"
         Me.commi_cessbtn.Size = New System.Drawing.Size(200, 62)
         Me.commi_cessbtn.TabIndex = 9
@@ -119,6 +121,7 @@ Partial Class form_dashboard
         'echn_val_inbtn
         '
         Me.echn_val_inbtn.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.echn_val_inbtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.echn_val_inbtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(119, Byte), Integer))
         Me.echn_val_inbtn.FlatAppearance.BorderSize = 0
         Me.echn_val_inbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(103, Byte), Integer))
@@ -126,7 +129,7 @@ Partial Class form_dashboard
         Me.echn_val_inbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.echn_val_inbtn.Font = New System.Drawing.Font("Modern No. 20", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.echn_val_inbtn.ForeColor = System.Drawing.Color.White
-        Me.echn_val_inbtn.Location = New System.Drawing.Point(135, 252)
+        Me.echn_val_inbtn.Location = New System.Drawing.Point(166, 254)
         Me.echn_val_inbtn.Name = "echn_val_inbtn"
         Me.echn_val_inbtn.Size = New System.Drawing.Size(200, 62)
         Me.echn_val_inbtn.TabIndex = 8
@@ -136,6 +139,7 @@ Partial Class form_dashboard
         'echn_droit_probtn
         '
         Me.echn_droit_probtn.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.echn_droit_probtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.echn_droit_probtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(119, Byte), Integer))
         Me.echn_droit_probtn.FlatAppearance.BorderSize = 0
         Me.echn_droit_probtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(103, Byte), Integer))
@@ -153,6 +157,7 @@ Partial Class form_dashboard
         'echen_versbtn
         '
         Me.echen_versbtn.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.echen_versbtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.echen_versbtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(119, Byte), Integer))
         Me.echen_versbtn.FlatAppearance.BorderSize = 0
         Me.echen_versbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(103, Byte), Integer))
@@ -170,6 +175,7 @@ Partial Class form_dashboard
         'wilayabtn
         '
         Me.wilayabtn.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.wilayabtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.wilayabtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(119, Byte), Integer))
         Me.wilayabtn.FlatAppearance.BorderSize = 0
         Me.wilayabtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(103, Byte), Integer))
@@ -187,6 +193,7 @@ Partial Class form_dashboard
         'Residancebtn
         '
         Me.Residancebtn.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Residancebtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.Residancebtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(119, Byte), Integer))
         Me.Residancebtn.FlatAppearance.BorderSize = 0
         Me.Residancebtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(103, Byte), Integer))
@@ -204,6 +211,7 @@ Partial Class form_dashboard
         'attes_paie_loyerbtn
         '
         Me.attes_paie_loyerbtn.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.attes_paie_loyerbtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.attes_paie_loyerbtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(119, Byte), Integer))
         Me.attes_paie_loyerbtn.FlatAppearance.BorderSize = 0
         Me.attes_paie_loyerbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(103, Byte), Integer))
@@ -221,6 +229,7 @@ Partial Class form_dashboard
         'engag_achabtn
         '
         Me.engag_achabtn.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.engag_achabtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.engag_achabtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(119, Byte), Integer))
         Me.engag_achabtn.FlatAppearance.BorderSize = 0
         Me.engag_achabtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(103, Byte), Integer))
@@ -238,6 +247,7 @@ Partial Class form_dashboard
         'localbtn
         '
         Me.localbtn.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.localbtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.localbtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(119, Byte), Integer))
         Me.localbtn.FlatAppearance.BorderSize = 0
         Me.localbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(103, Byte), Integer))
@@ -255,6 +265,7 @@ Partial Class form_dashboard
         'Beneficiairebtn
         '
         Me.Beneficiairebtn.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Beneficiairebtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.Beneficiairebtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(119, Byte), Integer))
         Me.Beneficiairebtn.FlatAppearance.BorderSize = 0
         Me.Beneficiairebtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(103, Byte), Integer))
@@ -277,7 +288,9 @@ Partial Class form_dashboard
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "form_dashboard"
-        Me.Text = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "الواجهة الرئسية"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)

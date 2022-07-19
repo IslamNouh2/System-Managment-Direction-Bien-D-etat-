@@ -67,8 +67,8 @@ Partial Class Form_beneficiare
         Me.Nom_mere_beneTextBox = New System.Windows.Forms.TextBox()
         Me.Pre_mere_beneTextBox = New System.Windows.Forms.TextBox()
         Me.Residence_cd_residenceComboBox = New System.Windows.Forms.ComboBox()
-        Me.ResidenceBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ResidenceTableAdapter = New WindowsApplication1.droit_propriter_etatDataSetTableAdapters.ResidenceTableAdapter()
+        Me.ResidenceBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ResidenceTableAdapter1 = New WindowsApplication1.droit_propriter_etatDataSetTableAdapters.ResidenceTableAdapter()
         Nom_beneLabel = New System.Windows.Forms.Label()
         Pre_beneLabel = New System.Windows.Forms.Label()
         Date_naisLabel = New System.Windows.Forms.Label()
@@ -82,7 +82,7 @@ Partial Class Form_beneficiare
         CType(Me.BeneficiaireBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BeneficiaireBindingNavigator.SuspendLayout()
         CType(Me.BeneficiaireDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ResidenceBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ResidenceBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Nom_beneLabel
@@ -205,6 +205,8 @@ Partial Class Form_beneficiare
         Me.TableAdapterManager.Echencer_VersementTableAdapter = Nothing
         Me.TableAdapterManager.GestionnaireTableAdapter = Nothing
         Me.TableAdapterManager.LocalTableAdapter = Nothing
+        Me.TableAdapterManager.NomC_direcTableAdapter = Nothing
+        Me.TableAdapterManager.NomCBeneficiaireTableAdapter = Nothing
         Me.TableAdapterManager.PV_Commession_CessionTableAdapter = Nothing
         Me.TableAdapterManager.QuartierTableAdapter = Nothing
         Me.TableAdapterManager.Rapport_evaluationTableAdapter = Nothing
@@ -473,7 +475,7 @@ Partial Class Form_beneficiare
         'Residence_cd_residenceComboBox
         '
         Me.Residence_cd_residenceComboBox.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.BeneficiaireBindingSource, "residence_cd_residence", True))
-        Me.Residence_cd_residenceComboBox.DataSource = Me.ResidenceBindingSource
+        Me.Residence_cd_residenceComboBox.DataSource = Me.ResidenceBindingSource1
         Me.Residence_cd_residenceComboBox.DisplayMember = "Cd_residence"
         Me.Residence_cd_residenceComboBox.Font = New System.Drawing.Font("Nina", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Residence_cd_residenceComboBox.FormattingEnabled = True
@@ -483,14 +485,14 @@ Partial Class Form_beneficiare
         Me.Residence_cd_residenceComboBox.TabIndex = 23
         Me.Residence_cd_residenceComboBox.ValueMember = "Cd_residence"
         '
-        'ResidenceBindingSource
+        'ResidenceBindingSource1
         '
-        Me.ResidenceBindingSource.DataMember = "Residence"
-        Me.ResidenceBindingSource.DataSource = Me.Droit_propriter_etatDataSet
+        Me.ResidenceBindingSource1.DataMember = "Residence"
+        Me.ResidenceBindingSource1.DataSource = Me.Droit_propriter_etatDataSet
         '
-        'ResidenceTableAdapter
+        'ResidenceTableAdapter1
         '
-        Me.ResidenceTableAdapter.ClearBeforeFill = True
+        Me.ResidenceTableAdapter1.ClearBeforeFill = True
         '
         'Form_beneficiare
         '
@@ -517,14 +519,14 @@ Partial Class Form_beneficiare
         Me.Controls.Add(Me.BeneficiaireDataGridView)
         Me.Controls.Add(Me.BeneficiaireBindingNavigator)
         Me.Name = "Form_beneficiare"
-        Me.Text = "Form_beneficiare"
+        Me.Text = "المستفيد"
         CType(Me.Droit_propriter_etatDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BeneficiaireBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BeneficiaireBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.BeneficiaireBindingNavigator.ResumeLayout(False)
         Me.BeneficiaireBindingNavigator.PerformLayout()
         CType(Me.BeneficiaireDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ResidenceBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ResidenceBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -565,6 +567,6 @@ Partial Class Form_beneficiare
     Friend WithEvents Pre_mere_beneTextBox As TextBox
     Friend WithEvents BindingNavigatorAddNewItem As ToolStripButton
     Friend WithEvents Residence_cd_residenceComboBox As ComboBox
-    Friend WithEvents ResidenceBindingSource As BindingSource
-    Friend WithEvents ResidenceTableAdapter As droit_propriter_etatDataSetTableAdapters.ResidenceTableAdapter
+    Friend WithEvents ResidenceBindingSource1 As BindingSource
+    Friend WithEvents ResidenceTableAdapter1 As droit_propriter_etatDataSetTableAdapters.ResidenceTableAdapter
 End Class

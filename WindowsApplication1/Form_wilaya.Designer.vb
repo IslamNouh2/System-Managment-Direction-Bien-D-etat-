@@ -57,6 +57,7 @@ Partial Class Form_wilaya
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Cd_wilayaComboBox = New System.Windows.Forms.ComboBox()
         Me.DairaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.WilayaBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.BindingNavigator2 = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorAddNewItem1 = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorCountItem1 = New System.Windows.Forms.ToolStripLabel()
@@ -93,6 +94,7 @@ Partial Class Form_wilaya
         Me.SaveToolStrip_Quartier = New System.Windows.Forms.ToolStripButton()
         Me.Nom_QuartierTextBox = New System.Windows.Forms.TextBox()
         Me.Cd_communeComboBox = New System.Windows.Forms.ComboBox()
+        Me.CommuneBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.QuartierDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -100,6 +102,7 @@ Partial Class Form_wilaya
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Cd_dairaComboBox = New System.Windows.Forms.ComboBox()
         Me.CommuneBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DairaBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.BindingNavigator3 = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorAddNewItem2 = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorCountItem2 = New System.Windows.Forms.ToolStripLabel()
@@ -123,9 +126,6 @@ Partial Class Form_wilaya
         Me.CommuneTableAdapter = New WindowsApplication1.droit_propriter_etatDataSetTableAdapters.CommuneTableAdapter()
         Me.DairaTableAdapter = New WindowsApplication1.droit_propriter_etatDataSetTableAdapters.DairaTableAdapter()
         Me.QuartierTableAdapter = New WindowsApplication1.droit_propriter_etatDataSetTableAdapters.QuartierTableAdapter()
-        Me.WilayaBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DairaBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.CommuneBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Cd_wilayaLabel = New System.Windows.Forms.Label()
         Nom_wilayaLabel = New System.Windows.Forms.Label()
         Nom_dairaLabel = New System.Windows.Forms.Label()
@@ -142,6 +142,7 @@ Partial Class Form_wilaya
         CType(Me.WilayaDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.DairaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.WilayaBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BindingNavigator2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BindingNavigator2.SuspendLayout()
         CType(Me.DairaDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -149,15 +150,14 @@ Partial Class Form_wilaya
         CType(Me.BindingNavigator4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BindingNavigator4.SuspendLayout()
         CType(Me.QuartierBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CommuneBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.QuartierDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
         CType(Me.CommuneBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DairaBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BindingNavigator3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BindingNavigator3.SuspendLayout()
         CType(Me.CommuneDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.WilayaBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DairaBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CommuneBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Cd_wilayaLabel
@@ -466,6 +466,11 @@ Partial Class Form_wilaya
         '
         Me.DairaBindingSource.DataMember = "Daira"
         Me.DairaBindingSource.DataSource = Me.Droit_propriter_etatDataSet
+        '
+        'WilayaBindingSource1
+        '
+        Me.WilayaBindingSource1.DataMember = "Wilaya"
+        Me.WilayaBindingSource1.DataSource = Me.Droit_propriter_etatDataSet
         '
         'BindingNavigator2
         '
@@ -782,6 +787,11 @@ Partial Class Form_wilaya
         Me.Cd_communeComboBox.TabIndex = 6
         Me.Cd_communeComboBox.ValueMember = "Cd_commune"
         '
+        'CommuneBindingSource1
+        '
+        Me.CommuneBindingSource1.DataMember = "Commune"
+        Me.CommuneBindingSource1.DataSource = Me.Droit_propriter_etatDataSet
+        '
         'QuartierDataGridView
         '
         Me.QuartierDataGridView.AutoGenerateColumns = False
@@ -848,6 +858,11 @@ Partial Class Form_wilaya
         '
         Me.CommuneBindingSource.DataMember = "Commune"
         Me.CommuneBindingSource.DataSource = Me.Droit_propriter_etatDataSet
+        '
+        'DairaBindingSource1
+        '
+        Me.DairaBindingSource1.DataMember = "Daira"
+        Me.DairaBindingSource1.DataSource = Me.Droit_propriter_etatDataSet
         '
         'BindingNavigator3
         '
@@ -1029,6 +1044,8 @@ Partial Class Form_wilaya
         Me.TableAdapterManager.Echencer_VersementTableAdapter = Nothing
         Me.TableAdapterManager.GestionnaireTableAdapter = Nothing
         Me.TableAdapterManager.LocalTableAdapter = Nothing
+        Me.TableAdapterManager.NomC_direcTableAdapter = Nothing
+        Me.TableAdapterManager.NomCBeneficiaireTableAdapter = Nothing
         Me.TableAdapterManager.PV_Commession_CessionTableAdapter = Nothing
         Me.TableAdapterManager.QuartierTableAdapter = Me.QuartierTableAdapter
         Me.TableAdapterManager.Rapport_evaluationTableAdapter = Nothing
@@ -1049,21 +1066,6 @@ Partial Class Form_wilaya
         '
         Me.QuartierTableAdapter.ClearBeforeFill = True
         '
-        'WilayaBindingSource1
-        '
-        Me.WilayaBindingSource1.DataMember = "Wilaya"
-        Me.WilayaBindingSource1.DataSource = Me.Droit_propriter_etatDataSet
-        '
-        'DairaBindingSource1
-        '
-        Me.DairaBindingSource1.DataMember = "Daira"
-        Me.DairaBindingSource1.DataSource = Me.Droit_propriter_etatDataSet
-        '
-        'CommuneBindingSource1
-        '
-        Me.CommuneBindingSource1.DataMember = "Commune"
-        Me.CommuneBindingSource1.DataSource = Me.Droit_propriter_etatDataSet
-        '
         'Form_wilaya
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1075,7 +1077,7 @@ Partial Class Form_wilaya
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "Form_wilaya"
-        Me.Text = "Form_wilaya"
+        Me.Text = "الولاية/البلدية/الدائرة/الحي"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1087,6 +1089,7 @@ Partial Class Form_wilaya
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.DairaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WilayaBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BindingNavigator2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.BindingNavigator2.ResumeLayout(False)
         Me.BindingNavigator2.PerformLayout()
@@ -1097,17 +1100,16 @@ Partial Class Form_wilaya
         Me.BindingNavigator4.ResumeLayout(False)
         Me.BindingNavigator4.PerformLayout()
         CType(Me.QuartierBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CommuneBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.QuartierDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         CType(Me.CommuneBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DairaBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BindingNavigator3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.BindingNavigator3.ResumeLayout(False)
         Me.BindingNavigator3.PerformLayout()
         CType(Me.CommuneDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.WilayaBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DairaBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CommuneBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

@@ -162,6 +162,8 @@ Partial Class Form_gestionnier
         Me.TableAdapterManager.Echencer_VersementTableAdapter = Nothing
         Me.TableAdapterManager.GestionnaireTableAdapter = Me.GestionnaireTableAdapter
         Me.TableAdapterManager.LocalTableAdapter = Nothing
+        Me.TableAdapterManager.NomC_direcTableAdapter = Nothing
+        Me.TableAdapterManager.NomCBeneficiaireTableAdapter = Nothing
         Me.TableAdapterManager.PV_Commession_CessionTableAdapter = Nothing
         Me.TableAdapterManager.QuartierTableAdapter = Nothing
         Me.TableAdapterManager.Rapport_evaluationTableAdapter = Nothing
@@ -408,7 +410,7 @@ Partial Class Form_gestionnier
         Me.Controls.Add(Me.GestionnaireDataGridView)
         Me.Controls.Add(Me.GestionnaireBindingNavigator)
         Me.Name = "Form_gestionnier"
-        Me.Text = "Form_gestionnier"
+        Me.Text = "المتصرف"
         CType(Me.Droit_propriter_etatDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GestionnaireBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GestionnaireBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()

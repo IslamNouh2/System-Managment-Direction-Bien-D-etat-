@@ -23,26 +23,26 @@ Partial Class Form_Rapport_Evaluation
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_Rapport_Evaluation))
         Dim Cd_rapp_eval_immbLabel As System.Windows.Forms.Label
         Dim Dat_rapp_eval_immbLabel As System.Windows.Forms.Label
         Dim N_rappi_eval_immbLabel As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_Rapport_Evaluation))
         Me.Droit_propriter_etatDataSet = New WindowsApplication1.droit_propriter_etatDataSet()
         Me.Rapport_evaluationBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Rapport_evaluationTableAdapter = New WindowsApplication1.droit_propriter_etatDataSetTableAdapters.Rapport_evaluationTableAdapter()
         Me.TableAdapterManager = New WindowsApplication1.droit_propriter_etatDataSetTableAdapters.TableAdapterManager()
         Me.Rapport_evaluationBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
+        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
+        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.Rapport_evaluationBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.Rapport_evaluationDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -60,6 +60,42 @@ Partial Class Form_Rapport_Evaluation
         Me.Rapport_evaluationBindingNavigator.SuspendLayout()
         CType(Me.Rapport_evaluationDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'Cd_rapp_eval_immbLabel
+        '
+        Cd_rapp_eval_immbLabel.Anchor = System.Windows.Forms.AnchorStyles.None
+        Cd_rapp_eval_immbLabel.AutoSize = True
+        Cd_rapp_eval_immbLabel.Font = New System.Drawing.Font("Nina", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Cd_rapp_eval_immbLabel.ForeColor = System.Drawing.Color.White
+        Cd_rapp_eval_immbLabel.Location = New System.Drawing.Point(161, 67)
+        Cd_rapp_eval_immbLabel.Name = "Cd_rapp_eval_immbLabel"
+        Cd_rapp_eval_immbLabel.Size = New System.Drawing.Size(124, 19)
+        Cd_rapp_eval_immbLabel.TabIndex = 2
+        Cd_rapp_eval_immbLabel.Text = "رمز محضر تقييم العقار"
+        '
+        'Dat_rapp_eval_immbLabel
+        '
+        Dat_rapp_eval_immbLabel.Anchor = System.Windows.Forms.AnchorStyles.None
+        Dat_rapp_eval_immbLabel.AutoSize = True
+        Dat_rapp_eval_immbLabel.Font = New System.Drawing.Font("Nina", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Dat_rapp_eval_immbLabel.ForeColor = System.Drawing.Color.White
+        Dat_rapp_eval_immbLabel.Location = New System.Drawing.Point(699, 67)
+        Dat_rapp_eval_immbLabel.Name = "Dat_rapp_eval_immbLabel"
+        Dat_rapp_eval_immbLabel.Size = New System.Drawing.Size(131, 19)
+        Dat_rapp_eval_immbLabel.TabIndex = 4
+        Dat_rapp_eval_immbLabel.Text = "تاريخ محضر تقييم العقار"
+        '
+        'N_rappi_eval_immbLabel
+        '
+        N_rappi_eval_immbLabel.Anchor = System.Windows.Forms.AnchorStyles.None
+        N_rappi_eval_immbLabel.AutoSize = True
+        N_rappi_eval_immbLabel.Font = New System.Drawing.Font("Nina", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        N_rappi_eval_immbLabel.ForeColor = System.Drawing.Color.White
+        N_rappi_eval_immbLabel.Location = New System.Drawing.Point(448, 134)
+        N_rappi_eval_immbLabel.Name = "N_rappi_eval_immbLabel"
+        N_rappi_eval_immbLabel.Size = New System.Drawing.Size(124, 19)
+        N_rappi_eval_immbLabel.TabIndex = 6
+        N_rappi_eval_immbLabel.Text = "رقم محضر تقييم العقار "
         '
         'Droit_propriter_etatDataSet
         '
@@ -93,6 +129,8 @@ Partial Class Form_Rapport_Evaluation
         Me.TableAdapterManager.Echencer_VersementTableAdapter = Nothing
         Me.TableAdapterManager.GestionnaireTableAdapter = Nothing
         Me.TableAdapterManager.LocalTableAdapter = Nothing
+        Me.TableAdapterManager.NomC_direcTableAdapter = Nothing
+        Me.TableAdapterManager.NomCBeneficiaireTableAdapter = Nothing
         Me.TableAdapterManager.PV_Commession_CessionTableAdapter = Nothing
         Me.TableAdapterManager.QuartierTableAdapter = Nothing
         Me.TableAdapterManager.Rapport_evaluationTableAdapter = Me.Rapport_evaluationTableAdapter
@@ -118,6 +156,31 @@ Partial Class Form_Rapport_Evaluation
         Me.Rapport_evaluationBindingNavigator.Size = New System.Drawing.Size(1017, 25)
         Me.Rapport_evaluationBindingNavigator.TabIndex = 0
         Me.Rapport_evaluationBindingNavigator.Text = "BindingNavigator1"
+        '
+        'BindingNavigatorAddNewItem
+        '
+        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
+        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorAddNewItem.Text = "Add new"
+        '
+        'BindingNavigatorCountItem
+        '
+        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(35, 22)
+        Me.BindingNavigatorCountItem.Text = "of {0}"
+        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
+        '
+        'BindingNavigatorDeleteItem
+        '
+        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
+        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorDeleteItem.Text = "Delete"
         '
         'BindingNavigatorMoveFirstItem
         '
@@ -151,16 +214,9 @@ Partial Class Form_Rapport_Evaluation
         Me.BindingNavigatorPositionItem.Text = "0"
         Me.BindingNavigatorPositionItem.ToolTipText = "Current position"
         '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(35, 22)
-        Me.BindingNavigatorCountItem.Text = "of {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
-        '
         'BindingNavigatorSeparator1
         '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
         Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 25)
         '
         'BindingNavigatorMoveNextItem
@@ -183,26 +239,8 @@ Partial Class Form_Rapport_Evaluation
         '
         'BindingNavigatorSeparator2
         '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
         Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
-        '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorAddNewItem.Text = "Add new"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorDeleteItem.Text = "Delete"
         '
         'Rapport_evaluationBindingNavigatorSaveItem
         '
@@ -248,18 +286,6 @@ Partial Class Form_Rapport_Evaluation
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
         Me.DataGridViewTextBoxColumn3.ReadOnly = True
         '
-        'Cd_rapp_eval_immbLabel
-        '
-        Cd_rapp_eval_immbLabel.Anchor = System.Windows.Forms.AnchorStyles.None
-        Cd_rapp_eval_immbLabel.AutoSize = True
-        Cd_rapp_eval_immbLabel.Font = New System.Drawing.Font("Nina", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Cd_rapp_eval_immbLabel.ForeColor = System.Drawing.Color.White
-        Cd_rapp_eval_immbLabel.Location = New System.Drawing.Point(161, 67)
-        Cd_rapp_eval_immbLabel.Name = "Cd_rapp_eval_immbLabel"
-        Cd_rapp_eval_immbLabel.Size = New System.Drawing.Size(124, 19)
-        Cd_rapp_eval_immbLabel.TabIndex = 2
-        Cd_rapp_eval_immbLabel.Text = "رمز محضر تقييم العقار"
-        '
         'Cd_rapp_eval_immbTextBox
         '
         Me.Cd_rapp_eval_immbTextBox.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -271,18 +297,6 @@ Partial Class Form_Rapport_Evaluation
         Me.Cd_rapp_eval_immbTextBox.Size = New System.Drawing.Size(200, 27)
         Me.Cd_rapp_eval_immbTextBox.TabIndex = 3
         '
-        'Dat_rapp_eval_immbLabel
-        '
-        Dat_rapp_eval_immbLabel.Anchor = System.Windows.Forms.AnchorStyles.None
-        Dat_rapp_eval_immbLabel.AutoSize = True
-        Dat_rapp_eval_immbLabel.Font = New System.Drawing.Font("Nina", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Dat_rapp_eval_immbLabel.ForeColor = System.Drawing.Color.White
-        Dat_rapp_eval_immbLabel.Location = New System.Drawing.Point(699, 67)
-        Dat_rapp_eval_immbLabel.Name = "Dat_rapp_eval_immbLabel"
-        Dat_rapp_eval_immbLabel.Size = New System.Drawing.Size(131, 19)
-        Dat_rapp_eval_immbLabel.TabIndex = 4
-        Dat_rapp_eval_immbLabel.Text = "تاريخ محضر تقييم العقار"
-        '
         'Dat_rapp_eval_immbDateTimePicker
         '
         Me.Dat_rapp_eval_immbDateTimePicker.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -292,18 +306,6 @@ Partial Class Form_Rapport_Evaluation
         Me.Dat_rapp_eval_immbDateTimePicker.Name = "Dat_rapp_eval_immbDateTimePicker"
         Me.Dat_rapp_eval_immbDateTimePicker.Size = New System.Drawing.Size(200, 27)
         Me.Dat_rapp_eval_immbDateTimePicker.TabIndex = 5
-        '
-        'N_rappi_eval_immbLabel
-        '
-        N_rappi_eval_immbLabel.Anchor = System.Windows.Forms.AnchorStyles.None
-        N_rappi_eval_immbLabel.AutoSize = True
-        N_rappi_eval_immbLabel.Font = New System.Drawing.Font("Nina", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        N_rappi_eval_immbLabel.ForeColor = System.Drawing.Color.White
-        N_rappi_eval_immbLabel.Location = New System.Drawing.Point(448, 134)
-        N_rappi_eval_immbLabel.Name = "N_rappi_eval_immbLabel"
-        N_rappi_eval_immbLabel.Size = New System.Drawing.Size(124, 19)
-        N_rappi_eval_immbLabel.TabIndex = 6
-        N_rappi_eval_immbLabel.Text = "رقم محضر تقييم العقار "
         '
         'N_rappi_eval_immbTextBox
         '
@@ -330,7 +332,7 @@ Partial Class Form_Rapport_Evaluation
         Me.Controls.Add(Me.Rapport_evaluationDataGridView)
         Me.Controls.Add(Me.Rapport_evaluationBindingNavigator)
         Me.Name = "Form_Rapport_Evaluation"
-        Me.Text = "Form_Rapport_Evaluation"
+        Me.Text = "محضر تقييم العقار"
         CType(Me.Droit_propriter_etatDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Rapport_evaluationBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Rapport_evaluationBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()

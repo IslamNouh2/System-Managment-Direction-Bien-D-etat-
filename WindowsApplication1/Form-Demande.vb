@@ -8,34 +8,35 @@ Public Class Form_Demande
 
     ' Dim conn As New SqlConnection("Data Source=ISLAMOUH-PC\SQLEXPRESS;Initial Catalog=droit_propriter_etat;Integrated Security=True")
 
-    Private Sub fillPV_Commession_Cession()
-        connection.Open()
-        Dim query = "select * from dbo.PV_Commession_Cession"
-        Dim cmd As New SqlCommand(query, connection)
-        Dim adapter As New SqlDataAdapter(cmd)
-        Dim tbl As New DataTable()
-        adapter.Fill(tbl)
-        Cd_Pv_com_cessComboBox.DataSource = tbl
-        Cd_Pv_com_cessComboBox.DisplayMember = "Cd_Pv_com_cess"
-        Cd_Pv_com_cessComboBox.ValueMember = "Cd_Pv_com_cess"
-        connection.Close()
+    'Private Sub fillPV_Commession_Cession()
+    '    conn = getconnect()
+    '    conn.Open()
+    '    Dim query = "select * from dbo.PV_Commession_Cession"
+    '    Dim cmd As New SqlCommand(query, conn)
+    '    Dim adapter As New SqlDataAdapter(cmd)
+    '    Dim tbl As New DataTable()
+    '    adapter.Fill(tbl)
+    '    Cd_Pv_com_cessComboBox.DataSource = tbl
+    '    Cd_Pv_com_cessComboBox.DisplayMember = "Cd_Pv_com_cess"
+    '    Cd_Pv_com_cessComboBox.ValueMember = "Cd_Pv_com_cess"
+    '    conn.Close()
 
-    End Sub
+    'End Sub
 
 
-    Private Sub fillArrete_cession_bien_etat()
-        connection.Open()
-        Dim query = "select * from dbo.Arrete_cession_bien_etat"
-        Dim cmd As New SqlCommand(query, connection)
-        Dim adapter As New SqlDataAdapter(cmd)
-        Dim tbl As New DataTable()
-        adapter.Fill(tbl)
-        N_rapp_ren_immbComboBox.DataSource = tbl
-        N_rapp_ren_immbComboBox.DisplayMember = "N_rapp_ren_immb"
-        N_rapp_ren_immbComboBox.ValueMember = "N_rapp_ren_immb"
-        connection.Close()
+    'Private Sub fillArrete_cession_bien_etat()
+    '    connection.Open()
+    '    Dim query = "select * from dbo.Arrete_cession_bien_etat"
+    '    Dim cmd As New SqlCommand(query, connection)
+    '    Dim adapter As New SqlDataAdapter(cmd)
+    '    Dim tbl As New DataTable()
+    '    adapter.Fill(tbl)
+    '    N_rapp_ren_immbComboBox.DataSource = tbl
+    '    N_rapp_ren_immbComboBox.DisplayMember = "N_rapp_ren_immb"
+    '    N_rapp_ren_immbComboBox.ValueMember = "N_rapp_ren_immb"
+    '    connection.Close()
 
-    End Sub
+    'End Sub
 
 
     Private Sub Demande_acquisitionBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles Demande_acquisitionBindingNavigatorSaveItem.Click

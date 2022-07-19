@@ -7,34 +7,34 @@ Public Class Form_local
 
     ' Dim conn As New SqlConnection("Data Source=ISLAMOUH-PC\SQLEXPRESS;Initial Catalog=droit_propriter_etat;Integrated Security=True")
 
-    Private Sub fillBenefic()
-        connection.Open()
-        Dim query = "select * from dbo.Beneficiaire"
-        Dim cmd As New SqlCommand(query, connection)
-        Dim adapter As New SqlDataAdapter(cmd)
-        Dim tbl As New DataTable()
-        adapter.Fill(tbl)
-        Beneficiaire_cd_beneComboBox.DataSource = tbl
-        Beneficiaire_cd_beneComboBox.DisplayMember = "Cd_bene"
-        Beneficiaire_cd_beneComboBox.ValueMember = "Cd_bene"
-        connection.Close()
+    'Private Sub fillBenefic()
+    '    connection.Open()
+    '    Dim query = "select * from dbo.Beneficiaire"
+    '    Dim cmd As New SqlCommand(query, connection)
+    '    Dim adapter As New SqlDataAdapter(cmd)
+    '    Dim tbl As New DataTable()
+    '    adapter.Fill(tbl)
+    '    Beneficiaire_cd_beneComboBox.DataSource = tbl
+    '    Beneficiaire_cd_beneComboBox.DisplayMember = "Cd_bene"
+    '    Beneficiaire_cd_beneComboBox.ValueMember = "Cd_bene"
+    '    connection.Close()
 
-    End Sub
+    'End Sub
 
 
-    Private Sub fillRapport_evel_immb()
-        connection.Open()
-        Dim query = "select * from dbo.Rapport_evaluation"
-        Dim cmd As New SqlCommand(query, connection)
-        Dim adapter As New SqlDataAdapter(cmd)
-        Dim tbl As New DataTable()
-        adapter.Fill(tbl)
-        Cd_rapp_eval_immbComboBox.DataSource = tbl
-        Cd_rapp_eval_immbComboBox.DisplayMember = "Cd_rapp_eval_immb"
-        Cd_rapp_eval_immbComboBox.ValueMember = "Cd_rapp_eval_immb"
-        connection.Close()
+    'Private Sub fillRapport_evel_immb()
+    '    connection.Open()
+    '    Dim query = "select * from dbo.Rapport_evaluation"
+    '    Dim cmd As New SqlCommand(query, connection)
+    '    Dim adapter As New SqlDataAdapter(cmd)
+    '    Dim tbl As New DataTable()
+    '    adapter.Fill(tbl)
+    '    Cd_rapp_eval_immbComboBox.DataSource = tbl
+    '    Cd_rapp_eval_immbComboBox.DisplayMember = "Cd_rapp_eval_immb"
+    '    Cd_rapp_eval_immbComboBox.ValueMember = "Cd_rapp_eval_immb"
+    '    connection.Close()
 
-    End Sub
+    'End Sub
 
 
     Private Sub LocalBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles LocalBindingNavigatorSaveItem.Click
@@ -45,6 +45,8 @@ Public Class Form_local
     End Sub
 
     Private Sub Form_local_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'Droit_propriter_etatDataSet.NomCBeneficiaire' table. You can move, or remove it, as needed.
+        Me.NomCBeneficiaireTableAdapter.FillNomC(Me.Droit_propriter_etatDataSet.NomCBeneficiaire)
         'TODO: This line of code loads data into the 'Droit_propriter_etatDataSet.Rapport_evaluation' table. You can move, or remove it, as needed.
         Me.Rapport_evaluationTableAdapter.Fill(Me.Droit_propriter_etatDataSet.Rapport_evaluation)
         'TODO: This line of code loads data into the 'Droit_propriter_etatDataSet.Beneficiaire' table. You can move, or remove it, as needed.
@@ -61,7 +63,5 @@ Public Class Form_local
         Form_Rapport_Evaluation.Show()
     End Sub
 
-    Private Function connection() As SqlConnection
-        Throw New NotImplementedException()
-    End Function
+
 End Class

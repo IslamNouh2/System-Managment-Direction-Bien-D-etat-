@@ -55,11 +55,13 @@ Partial Class Form_certificate_engag_achat
         Me.N_Cert_Engag_AchtTextBox = New System.Windows.Forms.TextBox()
         Me.Date_Cert_Engeg_AchtDateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.Cd_gestionComboBox = New System.Windows.Forms.ComboBox()
+        Me.GestionnaireBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Beneficiaire_cd_beneComboBox = New System.Windows.Forms.ComboBox()
+        Me.NomCBeneficiaireBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BeneficiaireBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BeneficiaireTableAdapter = New WindowsApplication1.droit_propriter_etatDataSetTableAdapters.BeneficiaireTableAdapter()
-        Me.GestionnaireBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GestionnaireTableAdapter = New WindowsApplication1.droit_propriter_etatDataSetTableAdapters.GestionnaireTableAdapter()
+        Me.NomCBeneficiaireTableAdapter = New WindowsApplication1.droit_propriter_etatDataSetTableAdapters.NomCBeneficiaireTableAdapter()
         N_Cert_Engag_AchtLabel = New System.Windows.Forms.Label()
         Date_Cert_Engeg_AchtLabel = New System.Windows.Forms.Label()
         Beneficiaire_cd_beneLabel = New System.Windows.Forms.Label()
@@ -69,8 +71,9 @@ Partial Class Form_certificate_engag_achat
         CType(Me.Certificat_engagement_achatBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Certificat_engagement_achatBindingNavigator.SuspendLayout()
         CType(Me.Certificat_engagement_achatDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BeneficiaireBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GestionnaireBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NomCBeneficiaireBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BeneficiaireBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'N_Cert_Engag_AchtLabel
@@ -153,6 +156,8 @@ Partial Class Form_certificate_engag_achat
         Me.TableAdapterManager.Echencer_VersementTableAdapter = Nothing
         Me.TableAdapterManager.GestionnaireTableAdapter = Nothing
         Me.TableAdapterManager.LocalTableAdapter = Nothing
+        Me.TableAdapterManager.NomC_direcTableAdapter = Nothing
+        Me.TableAdapterManager.NomCBeneficiaireTableAdapter = Nothing
         Me.TableAdapterManager.PV_Commession_CessionTableAdapter = Nothing
         Me.TableAdapterManager.QuartierTableAdapter = Nothing
         Me.TableAdapterManager.Rapport_evaluationTableAdapter = Nothing
@@ -372,11 +377,16 @@ Partial Class Form_certificate_engag_achat
         Me.Cd_gestionComboBox.TabIndex = 10
         Me.Cd_gestionComboBox.ValueMember = "Cd_gestion"
         '
+        'GestionnaireBindingSource
+        '
+        Me.GestionnaireBindingSource.DataMember = "Gestionnaire"
+        Me.GestionnaireBindingSource.DataSource = Me.Droit_propriter_etatDataSet
+        '
         'Beneficiaire_cd_beneComboBox
         '
         Me.Beneficiaire_cd_beneComboBox.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.Certificat_engagement_achatBindingSource, "beneficiaire_cd_bene", True))
-        Me.Beneficiaire_cd_beneComboBox.DataSource = Me.BeneficiaireBindingSource
-        Me.Beneficiaire_cd_beneComboBox.DisplayMember = "Cd_bene"
+        Me.Beneficiaire_cd_beneComboBox.DataSource = Me.NomCBeneficiaireBindingSource
+        Me.Beneficiaire_cd_beneComboBox.DisplayMember = "NomC"
         Me.Beneficiaire_cd_beneComboBox.Font = New System.Drawing.Font("Nina", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Beneficiaire_cd_beneComboBox.FormattingEnabled = True
         Me.Beneficiaire_cd_beneComboBox.Location = New System.Drawing.Point(134, 193)
@@ -384,6 +394,11 @@ Partial Class Form_certificate_engag_achat
         Me.Beneficiaire_cd_beneComboBox.Size = New System.Drawing.Size(200, 27)
         Me.Beneficiaire_cd_beneComboBox.TabIndex = 12
         Me.Beneficiaire_cd_beneComboBox.ValueMember = "Cd_bene"
+        '
+        'NomCBeneficiaireBindingSource
+        '
+        Me.NomCBeneficiaireBindingSource.DataMember = "NomCBeneficiaire"
+        Me.NomCBeneficiaireBindingSource.DataSource = Me.Droit_propriter_etatDataSet
         '
         'BeneficiaireBindingSource
         '
@@ -394,14 +409,13 @@ Partial Class Form_certificate_engag_achat
         '
         Me.BeneficiaireTableAdapter.ClearBeforeFill = True
         '
-        'GestionnaireBindingSource
-        '
-        Me.GestionnaireBindingSource.DataMember = "Gestionnaire"
-        Me.GestionnaireBindingSource.DataSource = Me.Droit_propriter_etatDataSet
-        '
         'GestionnaireTableAdapter
         '
         Me.GestionnaireTableAdapter.ClearBeforeFill = True
+        '
+        'NomCBeneficiaireTableAdapter
+        '
+        Me.NomCBeneficiaireTableAdapter.ClearBeforeFill = True
         '
         'Form_certificate_engag_achat
         '
@@ -421,15 +435,16 @@ Partial Class Form_certificate_engag_achat
         Me.Controls.Add(Me.Certificat_engagement_achatDataGridView)
         Me.Controls.Add(Me.Certificat_engagement_achatBindingNavigator)
         Me.Name = "Form_certificate_engag_achat"
-        Me.Text = " "
+        Me.Text = "  شهادة الالتزام  بالشراء"
         CType(Me.Droit_propriter_etatDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Certificat_engagement_achatBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Certificat_engagement_achatBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Certificat_engagement_achatBindingNavigator.ResumeLayout(False)
         Me.Certificat_engagement_achatBindingNavigator.PerformLayout()
         CType(Me.Certificat_engagement_achatDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BeneficiaireBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GestionnaireBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NomCBeneficiaireBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BeneficiaireBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -467,4 +482,6 @@ Partial Class Form_certificate_engag_achat
     Friend WithEvents BeneficiaireTableAdapter As droit_propriter_etatDataSetTableAdapters.BeneficiaireTableAdapter
     Friend WithEvents GestionnaireBindingSource As BindingSource
     Friend WithEvents GestionnaireTableAdapter As droit_propriter_etatDataSetTableAdapters.GestionnaireTableAdapter
+    Friend WithEvents NomCBeneficiaireBindingSource As BindingSource
+    Friend WithEvents NomCBeneficiaireTableAdapter As droit_propriter_etatDataSetTableAdapters.NomCBeneficiaireTableAdapter
 End Class

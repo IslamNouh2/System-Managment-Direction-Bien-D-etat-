@@ -57,11 +57,11 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=ISLAMOUH-PC\SQLEXPRESS;Initial Catalog=droit_propriter_etat;Integrate"& _ 
-            "d Security=True")>  _
-        Public ReadOnly Property droit_propriter_etatConnectionString() As String
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-6ARCBI0\SQLEXPRESS;Initial Catalog=droit_propriter_etat;Integ"& _ 
+            "rated Security=True")>  _
+        Public ReadOnly Property droit_propriter_etatConnectionString1() As String
             Get
-                Return CType(Me("droit_propriter_etatConnectionString"),String)
+                Return CType(Me("droit_propriter_etatConnectionString1"),String)
             End Get
         End Property
         
@@ -70,9 +70,9 @@ Namespace My
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
          Global.System.Configuration.DefaultSettingValueAttribute("Data Source=ISLAMOUH-PC\SQLSERVER;Initial Catalog=droit_propriter_etat;Integrated"& _ 
             " Security=True")>  _
-        Public ReadOnly Property droit_propriter_etatConnectionString1() As String
+        Public ReadOnly Property droit_propriter_etatConnectionString() As String
             Get
-                Return CType(Me("droit_propriter_etatConnectionString1"),String)
+                Return CType(Me("droit_propriter_etatConnectionString"),String)
             End Get
         End Property
     End Class

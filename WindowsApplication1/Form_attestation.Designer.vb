@@ -66,6 +66,14 @@ Partial Class Form_attestation
         Me.N_bonTextBox = New System.Windows.Forms.TextBox()
         Me.Dat_bonDateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.Cd_beneComboBox = New System.Windows.Forms.ComboBox()
+        Me.NomCBeneficiaireBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Droit_propriter_etatDataSet1 = New WindowsApplication1.droit_propriter_etatDataSet()
+        Me.BeneficiaireBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BeneficiaireTableAdapter = New WindowsApplication1.droit_propriter_etatDataSetTableAdapters.BeneficiaireTableAdapter()
+        Me.NomCBeneficiaireBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.NomCBeneficiaireTableAdapter = New WindowsApplication1.droit_propriter_etatDataSetTableAdapters.NomCBeneficiaireTableAdapter()
+        Me.NomCDirecteurBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.NomC_direcTableAdapter = New WindowsApplication1.droit_propriter_etatDataSetTableAdapters.NomC_direcTableAdapter()
         N_cert_locLabel = New System.Windows.Forms.Label()
         Dat_cert_loc_Label = New System.Windows.Forms.Label()
         Deb_paiementLabel = New System.Windows.Forms.Label()
@@ -79,6 +87,11 @@ Partial Class Form_attestation
         CType(Me.Attestation_paiemnet_loyerBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Attestation_paiemnet_loyerBindingNavigator.SuspendLayout()
         CType(Me.Attestation_paiemnet_loyerDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NomCBeneficiaireBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Droit_propriter_etatDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BeneficiaireBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NomCBeneficiaireBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NomCDirecteurBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'N_cert_locLabel
@@ -202,6 +215,8 @@ Partial Class Form_attestation
         Me.TableAdapterManager.Echencer_VersementTableAdapter = Nothing
         Me.TableAdapterManager.GestionnaireTableAdapter = Nothing
         Me.TableAdapterManager.LocalTableAdapter = Nothing
+        Me.TableAdapterManager.NomC_direcTableAdapter = Nothing
+        Me.TableAdapterManager.NomCBeneficiaireTableAdapter = Nothing
         Me.TableAdapterManager.PV_Commession_CessionTableAdapter = Nothing
         Me.TableAdapterManager.QuartierTableAdapter = Nothing
         Me.TableAdapterManager.Rapport_evaluationTableAdapter = Nothing
@@ -348,42 +363,49 @@ Partial Class Form_attestation
         Me.DataGridViewTextBoxColumn2.DataPropertyName = "Dat_cert_loc_"
         Me.DataGridViewTextBoxColumn2.HeaderText = "Dat_cert_loc_"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
         '
         'DataGridViewTextBoxColumn3
         '
         Me.DataGridViewTextBoxColumn3.DataPropertyName = "Deb_paiement"
         Me.DataGridViewTextBoxColumn3.HeaderText = "Deb_paiement"
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
         '
         'DataGridViewTextBoxColumn4
         '
         Me.DataGridViewTextBoxColumn4.DataPropertyName = "Fin_paiement"
         Me.DataGridViewTextBoxColumn4.HeaderText = "Fin_paiement"
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.ReadOnly = True
         '
         'DataGridViewTextBoxColumn5
         '
         Me.DataGridViewTextBoxColumn5.DataPropertyName = "Mont_paiement"
         Me.DataGridViewTextBoxColumn5.HeaderText = "Mont_paiement"
         Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        Me.DataGridViewTextBoxColumn5.ReadOnly = True
         '
         'DataGridViewTextBoxColumn6
         '
         Me.DataGridViewTextBoxColumn6.DataPropertyName = "N_bon"
         Me.DataGridViewTextBoxColumn6.HeaderText = "N_bon"
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        Me.DataGridViewTextBoxColumn6.ReadOnly = True
         '
         'DataGridViewTextBoxColumn7
         '
         Me.DataGridViewTextBoxColumn7.DataPropertyName = "Dat_bon"
         Me.DataGridViewTextBoxColumn7.HeaderText = "Dat_bon"
         Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        Me.DataGridViewTextBoxColumn7.ReadOnly = True
         '
         'DataGridViewTextBoxColumn8
         '
         Me.DataGridViewTextBoxColumn8.DataPropertyName = "Cd_bene"
         Me.DataGridViewTextBoxColumn8.HeaderText = "Cd_bene"
         Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        Me.DataGridViewTextBoxColumn8.ReadOnly = True
         '
         'N_cert_locTextBox
         '
@@ -450,13 +472,53 @@ Partial Class Form_attestation
         '
         'Cd_beneComboBox
         '
-        Me.Cd_beneComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Attestation_paiemnet_loyerBindingSource, "Cd_bene", True))
+        Me.Cd_beneComboBox.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.Attestation_paiemnet_loyerBindingSource, "Cd_bene", True))
+        Me.Cd_beneComboBox.DataSource = Me.NomCBeneficiaireBindingSource1
+        Me.Cd_beneComboBox.DisplayMember = "NomC"
         Me.Cd_beneComboBox.Font = New System.Drawing.Font("Nina", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cd_beneComboBox.FormattingEnabled = True
         Me.Cd_beneComboBox.Location = New System.Drawing.Point(499, 198)
         Me.Cd_beneComboBox.Name = "Cd_beneComboBox"
         Me.Cd_beneComboBox.Size = New System.Drawing.Size(200, 27)
         Me.Cd_beneComboBox.TabIndex = 17
+        Me.Cd_beneComboBox.ValueMember = "Cd_bene"
+        '
+        'NomCBeneficiaireBindingSource1
+        '
+        Me.NomCBeneficiaireBindingSource1.DataMember = "NomCBeneficiaire"
+        Me.NomCBeneficiaireBindingSource1.DataSource = Me.Droit_propriter_etatDataSet1
+        '
+        'Droit_propriter_etatDataSet1
+        '
+        Me.Droit_propriter_etatDataSet1.DataSetName = "droit_propriter_etatDataSet"
+        Me.Droit_propriter_etatDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'BeneficiaireBindingSource
+        '
+        Me.BeneficiaireBindingSource.DataMember = "Beneficiaire"
+        Me.BeneficiaireBindingSource.DataSource = Me.Droit_propriter_etatDataSet
+        '
+        'BeneficiaireTableAdapter
+        '
+        Me.BeneficiaireTableAdapter.ClearBeforeFill = True
+        '
+        'NomCBeneficiaireBindingSource
+        '
+        Me.NomCBeneficiaireBindingSource.DataSource = Me.Droit_propriter_etatDataSet
+        Me.NomCBeneficiaireBindingSource.Position = 0
+        '
+        'NomCBeneficiaireTableAdapter
+        '
+        Me.NomCBeneficiaireTableAdapter.ClearBeforeFill = True
+        '
+        'NomCDirecteurBindingSource
+        '
+        Me.NomCDirecteurBindingSource.DataMember = "NomC_Directeur"
+        Me.NomCDirecteurBindingSource.DataSource = Me.NomCBeneficiaireBindingSource
+        '
+        'NomC_direcTableAdapter
+        '
+        Me.NomC_direcTableAdapter.ClearBeforeFill = True
         '
         'Form_attestation
         '
@@ -483,13 +545,18 @@ Partial Class Form_attestation
         Me.Controls.Add(Me.Attestation_paiemnet_loyerDataGridView)
         Me.Controls.Add(Me.Attestation_paiemnet_loyerBindingNavigator)
         Me.Name = "Form_attestation"
-        Me.Text = "Form_attestation"
+        Me.Text = "شهادة استيفاء الإيجار"
         CType(Me.Droit_propriter_etatDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Attestation_paiemnet_loyerBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Attestation_paiemnet_loyerBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Attestation_paiemnet_loyerBindingNavigator.ResumeLayout(False)
         Me.Attestation_paiemnet_loyerBindingNavigator.PerformLayout()
         CType(Me.Attestation_paiemnet_loyerDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NomCBeneficiaireBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Droit_propriter_etatDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BeneficiaireBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NomCBeneficiaireBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NomCDirecteurBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -529,4 +596,12 @@ Partial Class Form_attestation
     Friend WithEvents N_bonTextBox As TextBox
     Friend WithEvents Dat_bonDateTimePicker As DateTimePicker
     Friend WithEvents Cd_beneComboBox As ComboBox
+    Friend WithEvents BeneficiaireBindingSource As BindingSource
+    Friend WithEvents BeneficiaireTableAdapter As droit_propriter_etatDataSetTableAdapters.BeneficiaireTableAdapter
+    Friend WithEvents NomCBeneficiaireBindingSource As BindingSource
+    Friend WithEvents NomCBeneficiaireTableAdapter As droit_propriter_etatDataSetTableAdapters.NomCBeneficiaireTableAdapter
+    Friend WithEvents NomCDirecteurBindingSource As BindingSource
+    Friend WithEvents NomC_direcTableAdapter As droit_propriter_etatDataSetTableAdapters.NomC_direcTableAdapter
+    Friend WithEvents NomCBeneficiaireBindingSource1 As BindingSource
+    Friend WithEvents Droit_propriter_etatDataSet1 As droit_propriter_etatDataSet
 End Class

@@ -23,14 +23,15 @@ Partial Class Form_Login
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.ADD_USBTN = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.TypeComboBox = New System.Windows.Forms.ComboBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.cancelBTN = New System.Windows.Forms.Button()
         Me.passwordtxt = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.typeCB = New System.Windows.Forms.ComboBox()
         Me.usernametxt = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.loginBTN = New System.Windows.Forms.Button()
@@ -41,13 +42,14 @@ Partial Class Form_Login
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(21, Byte), Integer), CType(CType(31, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.ADD_USBTN)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.TypeComboBox)
         Me.Panel1.Controls.Add(Me.Panel3)
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.cancelBTN)
         Me.Panel1.Controls.Add(Me.passwordtxt)
-        Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.typeCB)
         Me.Panel1.Controls.Add(Me.usernametxt)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.loginBTN)
@@ -56,6 +58,43 @@ Partial Class Form_Login
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(767, 508)
         Me.Panel1.TabIndex = 1
+        '
+        'ADD_USBTN
+        '
+        Me.ADD_USBTN.AllowDrop = True
+        Me.ADD_USBTN.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(55, Byte), Integer))
+        Me.ADD_USBTN.FlatAppearance.BorderSize = 0
+        Me.ADD_USBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ADD_USBTN.Font = New System.Drawing.Font("Nina", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ADD_USBTN.ForeColor = System.Drawing.Color.White
+        Me.ADD_USBTN.Location = New System.Drawing.Point(492, 435)
+        Me.ADD_USBTN.Name = "ADD_USBTN"
+        Me.ADD_USBTN.Size = New System.Drawing.Size(123, 40)
+        Me.ADD_USBTN.TabIndex = 20
+        Me.ADD_USBTN.Text = "ADD USER"
+        Me.ADD_USBTN.UseVisualStyleBackColor = False
+        '
+        'Label3
+        '
+        Me.Label3.AllowDrop = True
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Nina", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(306, 318)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(43, 19)
+        Me.Label3.TabIndex = 19
+        Me.Label3.Text = "Type"
+        '
+        'TypeComboBox
+        '
+        Me.TypeComboBox.Font = New System.Drawing.Font("Nina", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TypeComboBox.FormattingEnabled = True
+        Me.TypeComboBox.Items.AddRange(New Object() {"عـون معاينة", "مسـؤول"})
+        Me.TypeComboBox.Location = New System.Drawing.Point(461, 315)
+        Me.TypeComboBox.Name = "TypeComboBox"
+        Me.TypeComboBox.Size = New System.Drawing.Size(201, 27)
+        Me.TypeComboBox.TabIndex = 18
         '
         'Panel3
         '
@@ -97,7 +136,7 @@ Partial Class Form_Login
         Me.cancelBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cancelBTN.Font = New System.Drawing.Font("Nina", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cancelBTN.ForeColor = System.Drawing.Color.White
-        Me.cancelBTN.Location = New System.Drawing.Point(377, 432)
+        Me.cancelBTN.Location = New System.Drawing.Point(295, 435)
         Me.cancelBTN.Name = "cancelBTN"
         Me.cancelBTN.Size = New System.Drawing.Size(123, 40)
         Me.cancelBTN.TabIndex = 15
@@ -113,18 +152,6 @@ Partial Class Form_Login
         Me.passwordtxt.Size = New System.Drawing.Size(201, 27)
         Me.passwordtxt.TabIndex = 14
         '
-        'Label3
-        '
-        Me.Label3.AllowDrop = True
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Nina", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(306, 336)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(87, 19)
-        Me.Label3.TabIndex = 13
-        Me.Label3.Text = "Type Login"
-        '
         'Label2
         '
         Me.Label2.AllowDrop = True
@@ -136,17 +163,6 @@ Partial Class Form_Login
         Me.Label2.Size = New System.Drawing.Size(78, 19)
         Me.Label2.TabIndex = 12
         Me.Label2.Text = "Username"
-        '
-        'typeCB
-        '
-        Me.typeCB.AllowDrop = True
-        Me.typeCB.Font = New System.Drawing.Font("Nina", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.typeCB.FormattingEnabled = True
-        Me.typeCB.Items.AddRange(New Object() {"USER", "ADMINE"})
-        Me.typeCB.Location = New System.Drawing.Point(461, 333)
-        Me.typeCB.Name = "typeCB"
-        Me.typeCB.Size = New System.Drawing.Size(201, 27)
-        Me.typeCB.TabIndex = 11
         '
         'usernametxt
         '
@@ -177,7 +193,7 @@ Partial Class Form_Login
         Me.loginBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.loginBTN.Font = New System.Drawing.Font("Nina", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.loginBTN.ForeColor = System.Drawing.Color.White
-        Me.loginBTN.Location = New System.Drawing.Point(200, 432)
+        Me.loginBTN.Location = New System.Drawing.Point(118, 435)
         Me.loginBTN.Name = "loginBTN"
         Me.loginBTN.Size = New System.Drawing.Size(123, 40)
         Me.loginBTN.TabIndex = 8
@@ -204,12 +220,13 @@ Partial Class Form_Login
     Friend WithEvents Panel2 As Panel
     Friend WithEvents cancelBTN As Button
     Friend WithEvents passwordtxt As TextBox
-    Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents typeCB As ComboBox
     Friend WithEvents usernametxt As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents loginBTN As Button
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents TypeComboBox As ComboBox
+    Friend WithEvents ADD_USBTN As Button
 End Class

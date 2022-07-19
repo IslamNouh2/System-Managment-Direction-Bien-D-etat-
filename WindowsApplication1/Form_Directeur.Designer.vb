@@ -23,28 +23,28 @@ Partial Class Form_Directeur
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_Directeur))
         Dim Cd_direc_Label As System.Windows.Forms.Label
         Dim Nom_direcLabel As System.Windows.Forms.Label
         Dim Pre_direcLabel As System.Windows.Forms.Label
         Dim N_rapp_nomin_direcLabel As System.Windows.Forms.Label
         Dim Dat_rapp_nomin_direcLabel As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_Directeur))
         Me.Droit_propriter_etatDataSet = New WindowsApplication1.droit_propriter_etatDataSet()
         Me.DirecteurBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DirecteurTableAdapter = New WindowsApplication1.droit_propriter_etatDataSetTableAdapters.DirecteurTableAdapter()
         Me.TableAdapterManager = New WindowsApplication1.droit_propriter_etatDataSetTableAdapters.TableAdapterManager()
         Me.DirecteurBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
+        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
+        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.DirecteurBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.DirecteurDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -68,6 +68,61 @@ Partial Class Form_Directeur
         Me.DirecteurBindingNavigator.SuspendLayout()
         CType(Me.DirecteurDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'Cd_direc_Label
+        '
+        Cd_direc_Label.AutoSize = True
+        Cd_direc_Label.Font = New System.Drawing.Font("Nina", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Cd_direc_Label.ForeColor = System.Drawing.Color.White
+        Cd_direc_Label.Location = New System.Drawing.Point(378, 73)
+        Cd_direc_Label.Name = "Cd_direc_Label"
+        Cd_direc_Label.Size = New System.Drawing.Size(62, 19)
+        Cd_direc_Label.TabIndex = 2
+        Cd_direc_Label.Text = "رمز المدير"
+        '
+        'Nom_direcLabel
+        '
+        Nom_direcLabel.AutoSize = True
+        Nom_direcLabel.Font = New System.Drawing.Font("Nina", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Nom_direcLabel.ForeColor = System.Drawing.Color.White
+        Nom_direcLabel.Location = New System.Drawing.Point(374, 125)
+        Nom_direcLabel.Name = "Nom_direcLabel"
+        Nom_direcLabel.Size = New System.Drawing.Size(66, 19)
+        Nom_direcLabel.TabIndex = 4
+        Nom_direcLabel.Text = "لقــب المدير"
+        '
+        'Pre_direcLabel
+        '
+        Pre_direcLabel.AutoSize = True
+        Pre_direcLabel.Font = New System.Drawing.Font("Nina", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Pre_direcLabel.ForeColor = System.Drawing.Color.White
+        Pre_direcLabel.Location = New System.Drawing.Point(879, 73)
+        Pre_direcLabel.Name = "Pre_direcLabel"
+        Pre_direcLabel.Size = New System.Drawing.Size(63, 19)
+        Pre_direcLabel.TabIndex = 6
+        Pre_direcLabel.Text = "اسـم المدير"
+        '
+        'N_rapp_nomin_direcLabel
+        '
+        N_rapp_nomin_direcLabel.AutoSize = True
+        N_rapp_nomin_direcLabel.Font = New System.Drawing.Font("Nina", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        N_rapp_nomin_direcLabel.ForeColor = System.Drawing.Color.White
+        N_rapp_nomin_direcLabel.Location = New System.Drawing.Point(823, 125)
+        N_rapp_nomin_direcLabel.Name = "N_rapp_nomin_direcLabel"
+        N_rapp_nomin_direcLabel.Size = New System.Drawing.Size(119, 19)
+        N_rapp_nomin_direcLabel.TabIndex = 8
+        N_rapp_nomin_direcLabel.Text = "رقـم مقرر تعيين المدير"
+        '
+        'Dat_rapp_nomin_direcLabel
+        '
+        Dat_rapp_nomin_direcLabel.AutoSize = True
+        Dat_rapp_nomin_direcLabel.Font = New System.Drawing.Font("Nina", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Dat_rapp_nomin_direcLabel.ForeColor = System.Drawing.Color.White
+        Dat_rapp_nomin_direcLabel.Location = New System.Drawing.Point(554, 192)
+        Dat_rapp_nomin_direcLabel.Name = "Dat_rapp_nomin_direcLabel"
+        Dat_rapp_nomin_direcLabel.Size = New System.Drawing.Size(127, 19)
+        Dat_rapp_nomin_direcLabel.TabIndex = 10
+        Dat_rapp_nomin_direcLabel.Text = "تاريخ مقرر تعيين المدير"
         '
         'Droit_propriter_etatDataSet
         '
@@ -101,6 +156,8 @@ Partial Class Form_Directeur
         Me.TableAdapterManager.Echencer_VersementTableAdapter = Nothing
         Me.TableAdapterManager.GestionnaireTableAdapter = Nothing
         Me.TableAdapterManager.LocalTableAdapter = Nothing
+        Me.TableAdapterManager.NomC_direcTableAdapter = Nothing
+        Me.TableAdapterManager.NomCBeneficiaireTableAdapter = Nothing
         Me.TableAdapterManager.PV_Commession_CessionTableAdapter = Nothing
         Me.TableAdapterManager.QuartierTableAdapter = Nothing
         Me.TableAdapterManager.Rapport_evaluationTableAdapter = Nothing
@@ -126,6 +183,31 @@ Partial Class Form_Directeur
         Me.DirecteurBindingNavigator.Size = New System.Drawing.Size(994, 25)
         Me.DirecteurBindingNavigator.TabIndex = 0
         Me.DirecteurBindingNavigator.Text = "BindingNavigator1"
+        '
+        'BindingNavigatorAddNewItem
+        '
+        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
+        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorAddNewItem.Text = "Add new"
+        '
+        'BindingNavigatorCountItem
+        '
+        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(35, 22)
+        Me.BindingNavigatorCountItem.Text = "of {0}"
+        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
+        '
+        'BindingNavigatorDeleteItem
+        '
+        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
+        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorDeleteItem.Text = "Delete"
         '
         'BindingNavigatorMoveFirstItem
         '
@@ -159,16 +241,9 @@ Partial Class Form_Directeur
         Me.BindingNavigatorPositionItem.Text = "0"
         Me.BindingNavigatorPositionItem.ToolTipText = "Current position"
         '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(35, 22)
-        Me.BindingNavigatorCountItem.Text = "of {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
-        '
         'BindingNavigatorSeparator1
         '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
         Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 25)
         '
         'BindingNavigatorMoveNextItem
@@ -191,26 +266,8 @@ Partial Class Form_Directeur
         '
         'BindingNavigatorSeparator2
         '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
         Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
-        '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorAddNewItem.Text = "Add new"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorDeleteItem.Text = "Delete"
         '
         'DirecteurBindingNavigatorSaveItem
         '
@@ -247,35 +304,28 @@ Partial Class Form_Directeur
         Me.DataGridViewTextBoxColumn2.DataPropertyName = "Nom_direc"
         Me.DataGridViewTextBoxColumn2.HeaderText = "Nom_direc"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
         '
         'DataGridViewTextBoxColumn3
         '
         Me.DataGridViewTextBoxColumn3.DataPropertyName = "Pre_direc"
         Me.DataGridViewTextBoxColumn3.HeaderText = "Pre_direc"
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
         '
         'DataGridViewTextBoxColumn4
         '
         Me.DataGridViewTextBoxColumn4.DataPropertyName = "N_rapp_nomin_direc"
         Me.DataGridViewTextBoxColumn4.HeaderText = "N_rapp_nomin_direc"
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.ReadOnly = True
         '
         'DataGridViewTextBoxColumn5
         '
         Me.DataGridViewTextBoxColumn5.DataPropertyName = "Dat_rapp_nomin_direc"
         Me.DataGridViewTextBoxColumn5.HeaderText = "Dat_rapp_nomin_direc"
         Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        '
-        'Cd_direc_Label
-        '
-        Cd_direc_Label.AutoSize = True
-        Cd_direc_Label.Font = New System.Drawing.Font("Nina", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Cd_direc_Label.ForeColor = System.Drawing.Color.White
-        Cd_direc_Label.Location = New System.Drawing.Point(378, 73)
-        Cd_direc_Label.Name = "Cd_direc_Label"
-        Cd_direc_Label.Size = New System.Drawing.Size(62, 19)
-        Cd_direc_Label.TabIndex = 2
-        Cd_direc_Label.Text = "رمز المدير"
+        Me.DataGridViewTextBoxColumn5.ReadOnly = True
         '
         'Cd_direc_TextBox
         '
@@ -286,17 +336,6 @@ Partial Class Form_Directeur
         Me.Cd_direc_TextBox.Size = New System.Drawing.Size(200, 27)
         Me.Cd_direc_TextBox.TabIndex = 3
         '
-        'Nom_direcLabel
-        '
-        Nom_direcLabel.AutoSize = True
-        Nom_direcLabel.Font = New System.Drawing.Font("Nina", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Nom_direcLabel.ForeColor = System.Drawing.Color.White
-        Nom_direcLabel.Location = New System.Drawing.Point(374, 125)
-        Nom_direcLabel.Name = "Nom_direcLabel"
-        Nom_direcLabel.Size = New System.Drawing.Size(66, 19)
-        Nom_direcLabel.TabIndex = 4
-        Nom_direcLabel.Text = "لقــب المدير"
-        '
         'Nom_direcTextBox
         '
         Me.Nom_direcTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DirecteurBindingSource, "Nom_direc", True))
@@ -305,17 +344,6 @@ Partial Class Form_Directeur
         Me.Nom_direcTextBox.Name = "Nom_direcTextBox"
         Me.Nom_direcTextBox.Size = New System.Drawing.Size(200, 27)
         Me.Nom_direcTextBox.TabIndex = 5
-        '
-        'Pre_direcLabel
-        '
-        Pre_direcLabel.AutoSize = True
-        Pre_direcLabel.Font = New System.Drawing.Font("Nina", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Pre_direcLabel.ForeColor = System.Drawing.Color.White
-        Pre_direcLabel.Location = New System.Drawing.Point(879, 73)
-        Pre_direcLabel.Name = "Pre_direcLabel"
-        Pre_direcLabel.Size = New System.Drawing.Size(63, 19)
-        Pre_direcLabel.TabIndex = 6
-        Pre_direcLabel.Text = "اسـم المدير"
         '
         'Pre_direcTextBox
         '
@@ -326,17 +354,6 @@ Partial Class Form_Directeur
         Me.Pre_direcTextBox.Size = New System.Drawing.Size(200, 27)
         Me.Pre_direcTextBox.TabIndex = 7
         '
-        'N_rapp_nomin_direcLabel
-        '
-        N_rapp_nomin_direcLabel.AutoSize = True
-        N_rapp_nomin_direcLabel.Font = New System.Drawing.Font("Nina", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        N_rapp_nomin_direcLabel.ForeColor = System.Drawing.Color.White
-        N_rapp_nomin_direcLabel.Location = New System.Drawing.Point(823, 125)
-        N_rapp_nomin_direcLabel.Name = "N_rapp_nomin_direcLabel"
-        N_rapp_nomin_direcLabel.Size = New System.Drawing.Size(119, 19)
-        N_rapp_nomin_direcLabel.TabIndex = 8
-        N_rapp_nomin_direcLabel.Text = "رقـم مقرر تعيين المدير"
-        '
         'N_rapp_nomin_direcTextBox
         '
         Me.N_rapp_nomin_direcTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DirecteurBindingSource, "N_rapp_nomin_direc", True))
@@ -345,17 +362,6 @@ Partial Class Form_Directeur
         Me.N_rapp_nomin_direcTextBox.Name = "N_rapp_nomin_direcTextBox"
         Me.N_rapp_nomin_direcTextBox.Size = New System.Drawing.Size(200, 27)
         Me.N_rapp_nomin_direcTextBox.TabIndex = 9
-        '
-        'Dat_rapp_nomin_direcLabel
-        '
-        Dat_rapp_nomin_direcLabel.AutoSize = True
-        Dat_rapp_nomin_direcLabel.Font = New System.Drawing.Font("Nina", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Dat_rapp_nomin_direcLabel.ForeColor = System.Drawing.Color.White
-        Dat_rapp_nomin_direcLabel.Location = New System.Drawing.Point(554, 192)
-        Dat_rapp_nomin_direcLabel.Name = "Dat_rapp_nomin_direcLabel"
-        Dat_rapp_nomin_direcLabel.Size = New System.Drawing.Size(127, 19)
-        Dat_rapp_nomin_direcLabel.TabIndex = 10
-        Dat_rapp_nomin_direcLabel.Text = "تاريخ مقرر تعيين المدير"
         '
         'Dat_rapp_nomin_direcDateTimePicker
         '
@@ -385,7 +391,7 @@ Partial Class Form_Directeur
         Me.Controls.Add(Me.DirecteurDataGridView)
         Me.Controls.Add(Me.DirecteurBindingNavigator)
         Me.Name = "Form_Directeur"
-        Me.Text = "Form_Directeur"
+        Me.Text = "المدير"
         CType(Me.Droit_propriter_etatDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DirecteurBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DirecteurBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()

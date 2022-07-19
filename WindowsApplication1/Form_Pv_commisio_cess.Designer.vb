@@ -51,8 +51,8 @@ Partial Class Form_Pv_commisio_cess
         Me.Cd_Pv_com_cessTextBox = New System.Windows.Forms.TextBox()
         Me.Dat_PV_com_cessDateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.Cd_comi_reno_immbComboBox = New System.Windows.Forms.ComboBox()
-        Me.pv_commibtn = New System.Windows.Forms.Button()
         Me.Commission_cession_immobiliereBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.pv_commibtn = New System.Windows.Forms.Button()
         Me.Commission_cession_immobiliereTableAdapter = New WindowsApplication1.droit_propriter_etatDataSetTableAdapters.Commission_cession_immobiliereTableAdapter()
         Cd_Pv_com_cessLabel = New System.Windows.Forms.Label()
         Dat_PV_com_cessLabel = New System.Windows.Forms.Label()
@@ -130,6 +130,8 @@ Partial Class Form_Pv_commisio_cess
         Me.TableAdapterManager.Echencer_VersementTableAdapter = Nothing
         Me.TableAdapterManager.GestionnaireTableAdapter = Nothing
         Me.TableAdapterManager.LocalTableAdapter = Nothing
+        Me.TableAdapterManager.NomC_direcTableAdapter = Nothing
+        Me.TableAdapterManager.NomCBeneficiaireTableAdapter = Nothing
         Me.TableAdapterManager.PV_Commession_CessionTableAdapter = Me.PV_Commession_CessionTableAdapter
         Me.TableAdapterManager.QuartierTableAdapter = Nothing
         Me.TableAdapterManager.Rapport_evaluationTableAdapter = Nothing
@@ -316,6 +318,11 @@ Partial Class Form_Pv_commisio_cess
         Me.Cd_comi_reno_immbComboBox.TabIndex = 7
         Me.Cd_comi_reno_immbComboBox.ValueMember = "Cd_comi_reno_immb"
         '
+        'Commission_cession_immobiliereBindingSource
+        '
+        Me.Commission_cession_immobiliereBindingSource.DataMember = "Commission_cession_immobiliere"
+        Me.Commission_cession_immobiliereBindingSource.DataSource = Me.Droit_propriter_etatDataSet
+        '
         'pv_commibtn
         '
         Me.pv_commibtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(119, Byte), Integer))
@@ -331,11 +338,6 @@ Partial Class Form_Pv_commisio_cess
         Me.pv_commibtn.TabIndex = 9
         Me.pv_commibtn.Text = " طلب الاكتساب"
         Me.pv_commibtn.UseVisualStyleBackColor = False
-        '
-        'Commission_cession_immobiliereBindingSource
-        '
-        Me.Commission_cession_immobiliereBindingSource.DataMember = "Commission_cession_immobiliere"
-        Me.Commission_cession_immobiliereBindingSource.DataSource = Me.Droit_propriter_etatDataSet
         '
         'Commission_cession_immobiliereTableAdapter
         '
@@ -357,7 +359,7 @@ Partial Class Form_Pv_commisio_cess
         Me.Controls.Add(Me.PV_Commession_CessionDataGridView)
         Me.Controls.Add(Me.PV_Commession_CessionBindingNavigator)
         Me.Name = "Form_Pv_commisio_cess"
-        Me.Text = "Form_Pv_commisio_cess"
+        Me.Text = "محضر اجتماع لجنة التنازل"
         CType(Me.Droit_propriter_etatDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PV_Commession_CessionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PV_Commession_CessionBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()

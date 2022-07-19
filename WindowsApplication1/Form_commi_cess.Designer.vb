@@ -129,6 +129,8 @@ Partial Class Form_commi_cess
         Me.TableAdapterManager.Echencer_VersementTableAdapter = Nothing
         Me.TableAdapterManager.GestionnaireTableAdapter = Nothing
         Me.TableAdapterManager.LocalTableAdapter = Nothing
+        Me.TableAdapterManager.NomC_direcTableAdapter = Nothing
+        Me.TableAdapterManager.NomCBeneficiaireTableAdapter = Nothing
         Me.TableAdapterManager.PV_Commession_CessionTableAdapter = Nothing
         Me.TableAdapterManager.QuartierTableAdapter = Nothing
         Me.TableAdapterManager.Rapport_evaluationTableAdapter = Nothing
@@ -344,7 +346,7 @@ Partial Class Form_commi_cess
         Me.Controls.Add(Me.Commission_cession_immobiliereDataGridView)
         Me.Controls.Add(Me.Commission_cession_immobiliereBindingNavigator)
         Me.Name = "Form_commi_cess"
-        Me.Text = "commi_cess"
+        Me.Text = "لجنة التنازل عن الاملاك العقارية"
         CType(Me.Droit_propriter_etatDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Commission_cession_immobiliereBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Commission_cession_immobiliereBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()

@@ -81,12 +81,14 @@ Partial Class Form_local
         Me.N_portTextBox = New System.Windows.Forms.TextBox()
         Me.Prix_immobTextBox = New System.Windows.Forms.TextBox()
         Me.Beneficiaire_cd_beneComboBox = New System.Windows.Forms.ComboBox()
-        Me.Cd_rapp_eval_immbComboBox = New System.Windows.Forms.ComboBox()
-        Me.rapp_eval_immbbtn = New System.Windows.Forms.Button()
+        Me.NomCBeneficiaireBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BeneficiaireBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BeneficiaireTableAdapter = New WindowsApplication1.droit_propriter_etatDataSetTableAdapters.BeneficiaireTableAdapter()
+        Me.Cd_rapp_eval_immbComboBox = New System.Windows.Forms.ComboBox()
         Me.Rapport_evaluationBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.rapp_eval_immbbtn = New System.Windows.Forms.Button()
+        Me.BeneficiaireTableAdapter = New WindowsApplication1.droit_propriter_etatDataSetTableAdapters.BeneficiaireTableAdapter()
         Me.Rapport_evaluationTableAdapter = New WindowsApplication1.droit_propriter_etatDataSetTableAdapters.Rapport_evaluationTableAdapter()
+        Me.NomCBeneficiaireTableAdapter = New WindowsApplication1.droit_propriter_etatDataSetTableAdapters.NomCBeneficiaireTableAdapter()
         Type_LocLabel = New System.Windows.Forms.Label()
         Adr_LocLabel = New System.Windows.Forms.Label()
         Date_Utili_LocLabel = New System.Windows.Forms.Label()
@@ -105,6 +107,7 @@ Partial Class Form_local
         CType(Me.LocalBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LocalBindingNavigator.SuspendLayout()
         CType(Me.LocalDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NomCBeneficiaireBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BeneficiaireBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Rapport_evaluationBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -297,6 +300,8 @@ Partial Class Form_local
         Me.TableAdapterManager.Echencer_VersementTableAdapter = Nothing
         Me.TableAdapterManager.GestionnaireTableAdapter = Nothing
         Me.TableAdapterManager.LocalTableAdapter = Me.LocalTableAdapter
+        Me.TableAdapterManager.NomC_direcTableAdapter = Nothing
+        Me.TableAdapterManager.NomCBeneficiaireTableAdapter = Nothing
         Me.TableAdapterManager.PV_Commession_CessionTableAdapter = Nothing
         Me.TableAdapterManager.QuartierTableAdapter = Nothing
         Me.TableAdapterManager.Rapport_evaluationTableAdapter = Nothing
@@ -644,8 +649,8 @@ Partial Class Form_local
         '
         Me.Beneficiaire_cd_beneComboBox.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Beneficiaire_cd_beneComboBox.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.LocalBindingSource, "beneficiaire_cd_bene", True))
-        Me.Beneficiaire_cd_beneComboBox.DataSource = Me.BeneficiaireBindingSource
-        Me.Beneficiaire_cd_beneComboBox.DisplayMember = "Cd_bene"
+        Me.Beneficiaire_cd_beneComboBox.DataSource = Me.NomCBeneficiaireBindingSource
+        Me.Beneficiaire_cd_beneComboBox.DisplayMember = "NomC"
         Me.Beneficiaire_cd_beneComboBox.Font = New System.Drawing.Font("Nina", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Beneficiaire_cd_beneComboBox.FormattingEnabled = True
         Me.Beneficiaire_cd_beneComboBox.Location = New System.Drawing.Point(604, 210)
@@ -653,6 +658,16 @@ Partial Class Form_local
         Me.Beneficiaire_cd_beneComboBox.Size = New System.Drawing.Size(200, 27)
         Me.Beneficiaire_cd_beneComboBox.TabIndex = 27
         Me.Beneficiaire_cd_beneComboBox.ValueMember = "Cd_bene"
+        '
+        'NomCBeneficiaireBindingSource
+        '
+        Me.NomCBeneficiaireBindingSource.DataMember = "NomCBeneficiaire"
+        Me.NomCBeneficiaireBindingSource.DataSource = Me.Droit_propriter_etatDataSet
+        '
+        'BeneficiaireBindingSource
+        '
+        Me.BeneficiaireBindingSource.DataMember = "Beneficiaire"
+        Me.BeneficiaireBindingSource.DataSource = Me.Droit_propriter_etatDataSet
         '
         'Cd_rapp_eval_immbComboBox
         '
@@ -667,6 +682,11 @@ Partial Class Form_local
         Me.Cd_rapp_eval_immbComboBox.Size = New System.Drawing.Size(200, 27)
         Me.Cd_rapp_eval_immbComboBox.TabIndex = 29
         Me.Cd_rapp_eval_immbComboBox.ValueMember = "Cd_rapp_eval_immb"
+        '
+        'Rapport_evaluationBindingSource
+        '
+        Me.Rapport_evaluationBindingSource.DataMember = "Rapport_evaluation"
+        Me.Rapport_evaluationBindingSource.DataSource = Me.Droit_propriter_etatDataSet
         '
         'rapp_eval_immbbtn
         '
@@ -685,23 +705,17 @@ Partial Class Form_local
         Me.rapp_eval_immbbtn.Text = "محضر تقييم العقار"
         Me.rapp_eval_immbbtn.UseVisualStyleBackColor = False
         '
-        'BeneficiaireBindingSource
-        '
-        Me.BeneficiaireBindingSource.DataMember = "Beneficiaire"
-        Me.BeneficiaireBindingSource.DataSource = Me.Droit_propriter_etatDataSet
-        '
         'BeneficiaireTableAdapter
         '
         Me.BeneficiaireTableAdapter.ClearBeforeFill = True
         '
-        'Rapport_evaluationBindingSource
-        '
-        Me.Rapport_evaluationBindingSource.DataMember = "Rapport_evaluation"
-        Me.Rapport_evaluationBindingSource.DataSource = Me.Droit_propriter_etatDataSet
-        '
         'Rapport_evaluationTableAdapter
         '
         Me.Rapport_evaluationTableAdapter.ClearBeforeFill = True
+        '
+        'NomCBeneficiaireTableAdapter
+        '
+        Me.NomCBeneficiaireTableAdapter.ClearBeforeFill = True
         '
         'Form_local
         '
@@ -739,13 +753,14 @@ Partial Class Form_local
         Me.Controls.Add(Me.LocalDataGridView)
         Me.Controls.Add(Me.LocalBindingNavigator)
         Me.Name = "Form_local"
-        Me.Text = "Form_local"
+        Me.Text = "المحل"
         CType(Me.Droit_propriter_etatDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LocalBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LocalBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LocalBindingNavigator.ResumeLayout(False)
         Me.LocalBindingNavigator.PerformLayout()
         CType(Me.LocalDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NomCBeneficiaireBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BeneficiaireBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Rapport_evaluationBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -803,4 +818,6 @@ Partial Class Form_local
     Friend WithEvents BeneficiaireTableAdapter As droit_propriter_etatDataSetTableAdapters.BeneficiaireTableAdapter
     Friend WithEvents Rapport_evaluationBindingSource As BindingSource
     Friend WithEvents Rapport_evaluationTableAdapter As droit_propriter_etatDataSetTableAdapters.Rapport_evaluationTableAdapter
+    Friend WithEvents NomCBeneficiaireBindingSource As BindingSource
+    Friend WithEvents NomCBeneficiaireTableAdapter As droit_propriter_etatDataSetTableAdapters.NomCBeneficiaireTableAdapter
 End Class

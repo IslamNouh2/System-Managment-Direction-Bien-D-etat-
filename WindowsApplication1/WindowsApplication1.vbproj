@@ -47,10 +47,17 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -72,6 +79,24 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Creation_login\Form_ SING UP .Designer.vb">
+      <DependentUpon>Form_ SING UP .vb</DependentUpon>
+    </Compile>
+    <Compile Include="Creation_login\Form_ SING UP .vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Creation_login\Form_ADD_USER_login.Designer.vb">
+      <DependentUpon>Form_ADD_USER_login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Creation_login\Form_ADD_USER_login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Creation_login\Form_display login.Designer.vb">
+      <DependentUpon>Form_display login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Creation_login\Form_display login.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="droit_propriter_etatDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -80,16 +105,68 @@
     <Compile Include="droit_propriter_etatDataSet.vb">
       <DependentUpon>droit_propriter_etatDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Droit_pro_etat\droit_proDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>droit_proDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Droit_pro_etat\droit_proDataSet.vb">
+      <DependentUpon>droit_proDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Droit_pro_etat\Droi_proCrystalReport1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Droi_proCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Droit_pro_etat\FormCRDP.Designer.vb">
+      <DependentUpon>FormCRDP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Droit_pro_etat\FormCRDP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Droit_pro_etat\FormDroi_pro.Designer.vb">
+      <DependentUpon>FormDroi_pro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Droit_pro_etat\FormDroi_pro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Echens_vers\echen_versDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>echen_versDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Echens_vers\echen_versDataSet.vb">
+      <DependentUpon>echen_versDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Echens_vers\Echn_versCrystalReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Echn_versCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Echens_vers\Form_Abattment.Designer.vb">
+      <DependentUpon>Form_Abattment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Echens_vers\Form_Abattment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Echens_vers\Form_echencer_verse.Designer.vb">
+      <DependentUpon>Form_echencer_verse.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Echens_vers\Form_echencer_verse.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Echens_vers\form_RPCR.Designer.vb">
+      <DependentUpon>form_RPCR.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Echens_vers\form_RPCR.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form-Demande.Designer.vb">
       <DependentUpon>Form-Demande.vb</DependentUpon>
     </Compile>
     <Compile Include="Form-Demande.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_Abattment.Designer.vb">
-      <DependentUpon>Form_Abattment.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form_Abattment.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_arrete_cess.Designer.vb">
@@ -110,16 +187,16 @@
     <Compile Include="Form_Directeur.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_droit-pro-etat.Designer.vb">
-      <DependentUpon>Form_droit-pro-etat.vb</DependentUpon>
+    <Compile Include="valeur_initial\FormCRVI1.Designer.vb">
+      <DependentUpon>FormCRVI1.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form_droit-pro-etat.vb">
+    <Compile Include="valeur_initial\FormCRVI1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_echenc_paie_initial.Designer.vb">
+    <Compile Include="valeur_initial\Form_echenc_paie_initial.Designer.vb">
       <DependentUpon>Form_echenc_paie_initial.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form_echenc_paie_initial.vb">
+    <Compile Include="valeur_initial\Form_echenc_paie_initial.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_attestation.Designer.vb">
@@ -145,12 +222,6 @@
     </Compile>
     <Compile Include="form_dashboard.Designer.vb">
       <DependentUpon>form_dashboard.vb</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_echencer_verse.Designer.vb">
-      <DependentUpon>Form_echencer_verse.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form_echencer_verse.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_gestionnier.Designer.vb">
@@ -195,8 +266,8 @@
     <Compile Include="Form_wilaya.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Module_Connection.vb" />
-    <Compile Include="Module_hash.vb" />
+    <Compile Include="hash_connection\Module_Connection.vb" />
+    <Compile Include="hash_connection\Module_hash.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -212,13 +283,56 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="valeur_initial\Valeur_INCrystalReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Valeur_INCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="valeur_initial\Valeur_inDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Valeur_inDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="valeur_initial\Valeur_inDataSet.vb">
+      <DependentUpon>Valeur_inDataSet.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Creation_login\Form_ SING UP .resx">
+      <DependentUpon>Form_ SING UP .vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Creation_login\Form_ADD_USER_login.resx">
+      <DependentUpon>Form_ADD_USER_login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Creation_login\Form_display login.resx">
+      <DependentUpon>Form_display login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Droit_pro_etat\Droi_proCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Droi_proCrystalReport1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Droit_pro_etat\FormCRDP.resx">
+      <DependentUpon>FormCRDP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Droit_pro_etat\FormDroi_pro.resx">
+      <DependentUpon>FormDroi_pro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Echens_vers\Echn_versCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Echn_versCrystalReport.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Echens_vers\Form_Abattment.resx">
+      <DependentUpon>Form_Abattment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Echens_vers\Form_echencer_verse.resx">
+      <DependentUpon>Form_echencer_verse.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Echens_vers\form_RPCR.resx">
+      <DependentUpon>form_RPCR.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form-Demande.resx">
       <DependentUpon>Form-Demande.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_Abattment.resx">
-      <DependentUpon>Form_Abattment.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_arrete_cess.resx">
       <DependentUpon>Form_arrete_cess.vb</DependentUpon>
@@ -229,10 +343,10 @@
     <EmbeddedResource Include="Form_Directeur.resx">
       <DependentUpon>Form_Directeur.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_droit-pro-etat.resx">
-      <DependentUpon>Form_droit-pro-etat.vb</DependentUpon>
+    <EmbeddedResource Include="valeur_initial\FormCRVI1.resx">
+      <DependentUpon>FormCRVI1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_echenc_paie_initial.resx">
+    <EmbeddedResource Include="valeur_initial\Form_echenc_paie_initial.resx">
       <DependentUpon>Form_echenc_paie_initial.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_attestation.resx">
@@ -246,9 +360,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form_dashboard.resx">
       <DependentUpon>form_dashboard.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_echencer_verse.resx">
-      <DependentUpon>Form_echencer_verse.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_gestionnier.resx">
       <DependentUpon>Form_gestionnier.vb</DependentUpon>
@@ -277,6 +388,10 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="valeur_initial\Valeur_INCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Valeur_INCrystalReport.vb</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="droit_propriter_etatDataSet.xsc">
@@ -290,6 +405,28 @@
     <None Include="droit_propriter_etatDataSet.xss">
       <DependentUpon>droit_propriter_etatDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Droit_pro_etat\droit_proDataSet.xsc">
+      <DependentUpon>droit_proDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Droit_pro_etat\droit_proDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>droit_proDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Droit_pro_etat\droit_proDataSet.xss">
+      <DependentUpon>droit_proDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Echens_vers\echen_versDataSet.xsc">
+      <DependentUpon>echen_versDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Echens_vers\echen_versDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>echen_versDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Echens_vers\echen_versDataSet.xss">
+      <DependentUpon>echen_versDataSet.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -300,9 +437,23 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="valeur_initial\Valeur_inDataSet.xsc">
+      <DependentUpon>Valeur_inDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="valeur_initial\Valeur_inDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Valeur_inDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="valeur_initial\Valeur_inDataSet.xss">
+      <DependentUpon>Valeur_inDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\IMG_0846[1].JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

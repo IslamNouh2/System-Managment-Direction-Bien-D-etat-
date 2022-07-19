@@ -54,10 +54,10 @@ Partial Class Form_Demande
         Me.Dat_dem_acquDateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.N_dem_acquTextBox = New System.Windows.Forms.TextBox()
         Me.N_rapp_ren_immbComboBox = New System.Windows.Forms.ComboBox()
+        Me.Arrete_cession_bien_etatBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Cd_Pv_com_cessComboBox = New System.Windows.Forms.ComboBox()
         Me.PV_Commession_CessionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PV_Commession_CessionTableAdapter = New WindowsApplication1.droit_propriter_etatDataSetTableAdapters.PV_Commession_CessionTableAdapter()
-        Me.Arrete_cession_bien_etatBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Arrete_cession_bien_etatTableAdapter = New WindowsApplication1.droit_propriter_etatDataSetTableAdapters.Arrete_cession_bien_etatTableAdapter()
         Dat_dem_acquLabel = New System.Windows.Forms.Label()
         N_dem_acquLabel = New System.Windows.Forms.Label()
@@ -68,8 +68,8 @@ Partial Class Form_Demande
         CType(Me.Demande_acquisitionBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Demande_acquisitionBindingNavigator.SuspendLayout()
         CType(Me.Demande_acquisitionDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PV_Commession_CessionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Arrete_cession_bien_etatBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PV_Commession_CessionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Dat_dem_acquLabel
@@ -148,6 +148,8 @@ Partial Class Form_Demande
         Me.TableAdapterManager.Echencer_VersementTableAdapter = Nothing
         Me.TableAdapterManager.GestionnaireTableAdapter = Nothing
         Me.TableAdapterManager.LocalTableAdapter = Nothing
+        Me.TableAdapterManager.NomC_direcTableAdapter = Nothing
+        Me.TableAdapterManager.NomCBeneficiaireTableAdapter = Nothing
         Me.TableAdapterManager.PV_Commession_CessionTableAdapter = Nothing
         Me.TableAdapterManager.QuartierTableAdapter = Nothing
         Me.TableAdapterManager.Rapport_evaluationTableAdapter = Nothing
@@ -348,6 +350,11 @@ Partial Class Form_Demande
         Me.N_rapp_ren_immbComboBox.TabIndex = 9
         Me.N_rapp_ren_immbComboBox.ValueMember = "N_rapp_ren_immb"
         '
+        'Arrete_cession_bien_etatBindingSource
+        '
+        Me.Arrete_cession_bien_etatBindingSource.DataMember = "Arrete_cession_bien_etat"
+        Me.Arrete_cession_bien_etatBindingSource.DataSource = Me.Droit_propriter_etatDataSet
+        '
         'Cd_Pv_com_cessComboBox
         '
         Me.Cd_Pv_com_cessComboBox.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.Demande_acquisitionBindingSource, "Cd_Pv_com_cess", True))
@@ -370,11 +377,6 @@ Partial Class Form_Demande
         '
         Me.PV_Commession_CessionTableAdapter.ClearBeforeFill = True
         '
-        'Arrete_cession_bien_etatBindingSource
-        '
-        Me.Arrete_cession_bien_etatBindingSource.DataMember = "Arrete_cession_bien_etat"
-        Me.Arrete_cession_bien_etatBindingSource.DataSource = Me.Droit_propriter_etatDataSet
-        '
         'Arrete_cession_bien_etatTableAdapter
         '
         Me.Arrete_cession_bien_etatTableAdapter.ClearBeforeFill = True
@@ -396,15 +398,15 @@ Partial Class Form_Demande
         Me.Controls.Add(Me.Demande_acquisitionDataGridView)
         Me.Controls.Add(Me.Demande_acquisitionBindingNavigator)
         Me.Name = "Form_Demande"
-        Me.Text = "Form_Demande"
+        Me.Text = "طلب الاكتساب"
         CType(Me.Droit_propriter_etatDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Demande_acquisitionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Demande_acquisitionBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Demande_acquisitionBindingNavigator.ResumeLayout(False)
         Me.Demande_acquisitionBindingNavigator.PerformLayout()
         CType(Me.Demande_acquisitionDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PV_Commession_CessionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Arrete_cession_bien_etatBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PV_Commession_CessionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
